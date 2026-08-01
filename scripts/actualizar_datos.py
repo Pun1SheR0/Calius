@@ -52,4 +52,90 @@ def extraer(texto):
         goles = RE_GOLES.findall(ventana)
         if not goles:
             continue
-        ga, gb = int(goles[-1][0]), int(goles
+        ga, gb = int(goles[-1][0]), int(goles[-1][1])
+        if ga == gb:
+            continue
+        fechas = RE_FECHA.findall(ventana)
+        date = ""
+        if fechas:
+            d, mo, y = fechas[-1]
+            date = "20" + y + "-" + mo + "-" + d
+        filas.append({"id": mid, "date": date, "a": bonito(a_slug), "b": bonito(b_slug), "ga": ga, "gb": gb, "note": "EGW"})
+    return filasdef elegir_via(sesion):
+    for nombre, construir in VIAS:
+        try:
+            r = sesion.get(construir(ORIGEN), timeout=45)
+            if r.status_code != 200:
+                print("[via] " + nombre + ": HTTP " + str(r.status_code), file=sys.stderr)
+                continue
+            filas = extraer(r.text)
+            if filas:
+                print("[via] " + nombre + ": OK, " + str(len(filas)) + " partidos", file=sys.stderr)
+                return nombre, construir
+            print("[via] " + nombre + ": responde pero sin partidos (" + str(len(r.text)) + " bytes)", file=sys.stderr)
+        except requests.RequestException as e:
+            print("[via] " + nombre + ": " + type(e).__name__, file=sys.stderr)
+        time.sleep(2)
+    return None
+
+def main():
+    sesion = requests.Session()
+    sesion.headers.update(CABECERAS)
+
+    elegida = elegir_via(sesion)
+    if not elegida:
+        print("[ERROR] Ninguna via ha devuelto partidos.", file=sys.stderr)
+        return 1
+    nombre, construir = elegida
+    print("[info] usando la via " + nombre, file=sys.stderr)
+
+    encontrados = []
+    for pagina in range(1, PAGINAS + 1):
+        url = ORIGEN if pagina == 1 else ORIGEN + "?page=" + str(pagina)
+        try:
+            r = sesion.get(construir(url), timeout=45)
+            r.raise_for_status()
+        except requests.RequestException as e:
+            print("[aviso] pagina " + str(pagina) + ": " + str(e), file=sys.stderr)
+            break
+        filas = extraer(r.text)
+        print("[info] pagina " + str(pagina) + ": " + str(len(filas)) + " partidos", file=sys.stderr)
+        if not filas:
+            break
+        encontrados.extend(filas)
+        time.sleep(PAUSA)
+
+    if not encontrados:
+        print("[ERROR] No se ha reconocido ningun partido.", file=sys.stderr)
+        return 1
+
+    try:
+        with open(SALIDA, encoding="utf-8") as f:
+            datos = json.load(f)
+    except Exception:
+        datos = {"matches": []}
+
+    previos = datos.get("matches", [])
+    conocidos = set(m.get("id") for m in previos)
+
+    vistos = set()
+    limpios = []
+    for f in encontrados:
+        if f["id"] in conocidos or f["id"] in vistos:
+            continue
+        vistos.add(f["id"])
+        limpios.append(f)
+
+    datos["matches"] = previos + limpios
+    datos["actualizado"] = time.strftime("%Y-%m-%d %H:%M UTC")
+    datos["via"] = nombre
+    datos["fuente"] = "EGamersWorld - https://egamersworld.com"
+
+    with open(SALIDA, "w", encoding="utf-8") as f:
+        json.dump(datos, f, ensure_ascii=False, indent=1)
+
+    print("[ok] " + str(len(limpios)) + " partidos nuevos. Total: " + str(len(datos["matches"])), file=sys.stderr)
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
