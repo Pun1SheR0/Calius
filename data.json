@@ -1,5 +1,187 @@
 {
- "actualizado": "",
+ "actualizado": "2026-08-01 20:28 UTC",
  "fuente": "EGamersWorld - https://egamersworld.com",
- "matches": []
+ "matches": [
+  {
+   "id": "yRdB8D8xF",
+   "date": "2026-07-26",
+   "a": "Levyfinn",
+   "b": "Rvplegend",
+   "ga": 5,
+   "gb": 6,
+   "note": "EGW"
+  },
+  {
+   "id": "A3wXK-Z9U",
+   "date": "2026-07-26",
+   "a": "Rvplegend",
+   "b": "Nassada",
+   "ga": 10,
+   "gb": 8,
+   "note": "EGW"
+  },
+  {
+   "id": "er_bcE4cI",
+   "date": "2026-07-26",
+   "a": "Bonanno",
+   "b": "Levyfinn",
+   "ga": 2,
+   "gb": 6,
+   "note": "EGW"
+  },
+  {
+   "id": "HKBR95I_tI",
+   "date": "2026-07-26",
+   "a": "Nassada",
+   "b": "Vejrgang",
+   "ga": 11,
+   "gb": 4,
+   "note": "EGW"
+  },
+  {
+   "id": "ugQ6QMqWXQ",
+   "date": "2026-07-26",
+   "a": "Alihan",
+   "b": "Rvplegend",
+   "ga": 0,
+   "gb": 1,
+   "note": "EGW"
+  },
+  {
+   "id": "t2iauripqK",
+   "date": "2026-07-26",
+   "a": "Levyfinn",
+   "b": "Nicolas99fc",
+   "ga": 5,
+   "gb": 3,
+   "note": "EGW"
+  },
+  {
+   "id": "u0_6OS0n-",
+   "date": "2026-07-26",
+   "a": "Bonanno",
+   "b": "Hhezers",
+   "ga": 12,
+   "gb": 6,
+   "note": "EGW"
+  },
+  {
+   "id": "WLINaIbJOD",
+   "date": "2026-07-25",
+   "a": "K1john",
+   "b": "Dfernandes",
+   "ga": 5,
+   "gb": 6,
+   "note": "EGW"
+  },
+  {
+   "id": "neto-Z7xkdumBFd",
+   "date": "2026-07-25",
+   "a": "Obrun2002",
+   "b": "Paulo",
+   "ga": 5,
+   "gb": 9,
+   "note": "EGW"
+  },
+  {
+   "id": "5WHIWqEKw",
+   "date": "2026-07-25",
+   "a": "Chrisdeboer",
+   "b": "Matias",
+   "ga": 8,
+   "gb": 10,
+   "note": "EGW"
+  },
+  {
+   "id": "fzXbSCmtet",
+   "date": "2026-07-25",
+   "a": "Karimisbak",
+   "b": "Virgil",
+   "ga": 4,
+   "gb": 2,
+   "note": "EGW"
+  },
+  {
+   "id": "5qbwtlePe3",
+   "date": "2026-07-25",
+   "a": "Hhezers",
+   "b": "Redlac",
+   "ga": 9,
+   "gb": 5,
+   "note": "EGW"
+  },
+  {
+   "id": "rSIjaMi43b",
+   "date": "2026-07-25",
+   "a": "Levi De Weerd",
+   "b": "Levyfinn",
+   "ga": 7,
+   "gb": 1,
+   "note": "EGW"
+  },
+  {
+   "id": "1yIb9lmw13",
+   "date": "2026-07-25",
+   "a": "Phzin",
+   "b": "Neat",
+   "ga": 4,
+   "gb": 5,
+   "note": "EGW"
+  },
+  {
+   "id": "AgWSy92bf8",
+   "date": "2026-07-25",
+   "a": "Abomakkah",
+   "b": "Ilian",
+   "ga": 8,
+   "gb": 7,
+   "note": "EGW"
+  },
+  {
+   "id": "9oQyzUtUiO",
+   "date": "2026-07-25",
+   "a": "Vejrgang",
+   "b": "Danipitbull",
+   "ga": 10,
+   "gb": 9,
+   "note": "EGW"
+  },
+  {
+   "id": "LTPLg5M543",
+   "date": "2026-07-25",
+   "a": "Nassada",
+   "b": "Marwanmc9",
+   "ga": 10,
+   "gb": 5,
+   "note": "EGW"
+  },
+  {
+   "id": "m4S9d54z1w",
+   "date": "2026-07-25",
+   "a": "Alihan",
+   "b": "Milkalove",
+   "ga": 8,
+   "gb": 4,
+   "note": "EGW"
+  },
+  {
+   "id": "WMxBYIsrdE",
+   "date": "2026-07-25",
+   "a": "Msdossary",
+   "b": "Emreyilmaz",
+   "ga": 6,
+   "gb": 1,
+   "note": "EGW"
+  },
+  {
+   "id": "MmK1BEMjG",
+   "date": "2026-07-25",
+   "a": "Rvplegend",
+   "b": "Jafonsogv",
+   "ga": 4,
+   "gb": 3,
+   "note": "EGW"
+  }
+ ],
+ "via": "r.jina.ai"
 }
