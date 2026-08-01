@@ -1,0 +1,41 @@
+name: Actualizar resultados
+
+on:
+  schedule:
+    # 05:15 UTC = 07:15 en España (verano). Minuto no redondo a propósito:
+    # a las horas en punto GitHub va saturado y retrasa las tareas.
+    - cron: '15 5 * * *'
+  workflow_dispatch:        # botón para lanzarlo a mano desde la web
+
+permissions:
+  contents: write           # necesario para que el robot pueda guardar data.json
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Buscar resultados nuevos
+        run: python scripts/actualizar_datos.py
+
+      - name: Guardar si hay cambios
+        run: |
+          if git diff --quiet data.json; then
+            echo "Sin novedades."
+            exit 0
+          fi
+          git config user.name  "actualizador"
+          git config user.email "actions@github.com"
+          git add data.json
+          git commit -m "Resultados actualizados $(date -u +'%Y-%m-%d')"
+          git push
