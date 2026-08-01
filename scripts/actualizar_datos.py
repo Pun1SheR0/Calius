@@ -61,7 +61,8 @@ def extraer(texto):
             d, mo, y = fechas[-1]
             date = "20" + y + "-" + mo + "-" + d
         filas.append({"id": mid, "date": date, "a": bonito(a_slug), "b": bonito(b_slug), "ga": ga, "gb": gb, "note": "EGW"})
-    return filasdef elegir_via(sesion):
+    return filas
+    def elegir_via(sesion):
     for nombre, construir in VIAS:
         try:
             r = sesion.get(construir(ORIGEN), timeout=45)
