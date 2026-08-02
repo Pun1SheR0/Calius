@@ -29,15 +29,10 @@ import requests
 WIKI = "easportsfc"
 API = f"https://liquipedia.net/{WIKI}/api.php"
 
-# Solo torneos de la version actual del juego (FC 26). Mucho mas acotado
-# que "Finished Tournaments" (1.578 paginas desde 2011): esta categoria
-# la llevan todos los torneos de esta temporada, confirmado en varias
-# paginas reales (eSerie_A/2026, eLPF/2026, EChampions_League/2026).
 CATEGORIA = "Category:EA SPORTS FC 26 Competitions"
 
-# Liquipedia exige un User-Agent identificable con URL de contacto.
 UA = "CaliusMarcador/1.0 (+https://github.com/Pun1SheR0/Calius)"
-PAUSA = 2.1  # 1 peticion cada 2s como minimo; margen extra por seguridad
+PAUSA = 2.1
 
 SALIDA = os.environ.get("SALIDA", "data.json")
 PROGRESO = os.environ.get("PROGRESO", "liq_progreso.json")
@@ -59,10 +54,6 @@ class LiquipediaAPI:
         self._ultima = time.time()
 
     def get(self, **params) -> dict:
-        """Si Liquipedia responde 429 (limite de peticiones), no es
-        necesariamente por nosotros: los runners de GitHub Actions
-        comparten IP con miles de proyectos ajenos. Se espera y se
-        reintenta en vez de rendirse al primer golpe."""
         params["format"] = "json"
         for intento in range(4):
             self._esperar()
@@ -117,7 +108,10 @@ class LiquipediaAPI:
 
 
 RE_OPONENTE = re.compile(r'opponent(\d)\s*=\s*\{\{\s*\w*Opponent\s*\|(.*?)\}\}', re.S)
-RE_FECHA = re.compile(r'([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})')
+RE_FECHA_ISO = re.compile(r'date\s*=\s*(\d{4})-(\d{2})-(\d{2})')
+RE_FECHA_TXT = re.compile(r'([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})')
+RE_MAP_SCORE1 = re.compile(r'score1\s*=\s*([^\s\|\}]*)')
+RE_MAP_SCORE2 = re.compile(r'score2\s*=\s*([^\s\|\}]*)')
 
 
 def encontrar_bloques_match(texto: str) -> list[str]:
@@ -154,9 +148,6 @@ def parsear_oponente(bloque_interno: str) -> tuple[str, str | None]:
 
 
 def dentro_de_ventana(fecha_iso: str, cutoff_iso: str) -> bool:
-    """Compara fechas ISO como texto: funciona porque YYYY-MM-DD ordena
-    igual como cadena que como fecha. Sin fecha -> se descarta: mejor
-    perder algun partido raro que colar algo de fuera de temporada."""
     return bool(fecha_iso) and fecha_iso >= cutoff_iso
 
 
@@ -172,6 +163,11 @@ def parsear_match(bloque: str, torneo: str, cutoff_iso: str) -> dict | None:
     if not n1 or not n2:
         return None
 
+    if s1 is None or s2 is None:
+        m1, m2 = RE_MAP_SCORE1.search(bloque), RE_MAP_SCORE2.search(bloque)
+        if m1 and m2:
+            s1, s2 = m1.group(1), m2.group(1)
+
     try:
         g1, g2 = int(s1), int(s2)
     except (TypeError, ValueError):
@@ -179,15 +175,20 @@ def parsear_match(bloque: str, torneo: str, cutoff_iso: str) -> dict | None:
     if g1 == g2:
         return None
 
-    fm = RE_FECHA.search(bloque)
     date = ''
+    fm = RE_FECHA_ISO.search(bloque)
     if fm:
-        mes, dia, anio = fm.groups()
-        try:
-            t = time.strptime(f"{mes} {dia} {anio}", "%B %d %Y")
-            date = time.strftime("%Y-%m-%d", t)
-        except ValueError:
-            pass
+        anio, mes, dia = fm.groups()
+        date = f"{anio}-{mes}-{dia}"
+    else:
+        fm = RE_FECHA_TXT.search(bloque)
+        if fm:
+            mes, dia, anio = fm.groups()
+            try:
+                t = time.strptime(f"{mes} {dia} {anio}", "%B %d %Y")
+                date = time.strftime("%Y-%m-%d", t)
+            except ValueError:
+                pass
 
     if not dentro_de_ventana(date, cutoff_iso):
         return None
@@ -197,8 +198,6 @@ def parsear_match(bloque: str, torneo: str, cutoff_iso: str) -> dict | None:
 
 
 def id_estable(titulo: str, indice: int, m: dict) -> str:
-    """ID reproducible: mismo torneo + mismo partido -> mismo id siempre,
-    para que reejecutar el importador nunca duplique."""
     import hashlib
     base = f"{titulo}#{indice}#{m['a']}#{m['b']}#{m['ga']}#{m['gb']}"
     return "liq-" + hashlib.sha1(base.encode("utf-8")).hexdigest()[:16]
@@ -250,7 +249,15 @@ def main() -> int:
         if wt is None:
             print(f"[debug] pagina no encontrada: {args.debug_pagina}", file=sys.stderr)
             return 1
-        print(wt[:6000])
+        bloques = encontrar_bloques_match(wt)
+        print(f"[debug] {len(bloques)} bloques Match encontrados en la pagina", file=sys.stderr)
+        if not bloques:
+            print("[debug] ni un solo bloque: se vuelca el principio de la pagina", file=sys.stderr)
+            print(wt[:3000])
+            return 0
+        for i, b in enumerate(bloques[:3], 1):
+            print(f"\n=== bloque {i} de {len(bloques)} ===")
+            print(b[:1500])
         return 0
 
     print("[info] listando torneos terminados...", file=sys.stderr)
@@ -304,6 +311,7 @@ def main() -> int:
 
         print(f"[{n}/{len(pendientes)}] {titulo}: {len(bloques)} bloques, "
               f"+{nuevos_aqui} nuevos", file=sys.stderr)
+
         if n % 20 == 0:
             guardar_progreso(hechos)
             guardar_data(datos)
