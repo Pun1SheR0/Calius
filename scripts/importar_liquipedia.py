@@ -235,3 +235,102 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None,
                      help="probar solo con N torneos (recomendado: 15 la primera vez)")
     ap.add_argument("--debug-pagina", type=str, default=None,
+                     help="vuelca el wikitext crudo de una pagina y sale, sin procesar nada mas")
+    ap.add_argument("--meses", type=int, default=4,
+                     help="solo partidos de los ultimos N meses (por defecto 4)")
+    args = ap.parse_args()
+
+    cutoff = time.strftime("%Y-%m-%d", time.gmtime(time.time() - args.meses * 30 * 86400))
+    print(f"[info] solo se guardan partidos desde {cutoff} en adelante", file=sys.stderr)
+
+    api = LiquipediaAPI()
+
+    if args.debug_pagina:
+        wt = api.wikitext(args.debug_pagina)
+        if wt is None:
+            print(f"[debug] pagina no encontrada: {args.debug_pagina}", file=sys.stderr)
+            return 1
+        print(wt[:6000])
+        return 0
+
+    print("[info] listando torneos terminados...", file=sys.stderr)
+    titulos = api.listar_torneos(limite=args.limit)
+    print(f"[info] {len(titulos)} torneos a procesar", file=sys.stderr)
+
+    hechos = cargar_progreso()
+    pendientes = [t for t in titulos if t not in hechos]
+    if len(pendientes) < len(titulos):
+        print(f"[info] reanudando: {len(titulos) - len(pendientes)} ya procesados antes",
+              file=sys.stderr)
+
+    datos = cargar_data()
+    conocidos = {m.get("id") for m in datos.get("matches", [])}
+
+    total_nuevos = 0
+    sin_match = 0
+    con_error = 0
+
+    for n, titulo in enumerate(pendientes, 1):
+        try:
+            wt = api.wikitext(titulo)
+        except requests.RequestException as e:
+            print(f"[aviso] {titulo}: {type(e).__name__}, se reintentara en la proxima ejecucion",
+                  file=sys.stderr)
+            con_error += 1
+            continue
+
+        if wt is None:
+            hechos.add(titulo)
+            continue
+
+        bloques = encontrar_bloques_match(wt)
+        if not bloques:
+            sin_match += 1
+
+        nuevos_aqui = 0
+        for i, bloque in enumerate(bloques):
+            m = parsear_match(bloque, titulo, cutoff)
+            if not m:
+                continue
+            mid = id_estable(titulo, i, m)
+            if mid in conocidos:
+                continue
+            datos.setdefault("matches", []).append({"id": mid, **m})
+            conocidos.add(mid)
+            nuevos_aqui += 1
+            total_nuevos += 1
+
+        hechos.add(titulo)
+
+        if n % 25 == 0 or nuevos_aqui:
+            print(f"[{n}/{len(pendientes)}] {titulo}: +{nuevos_aqui} partidos "
+                  f"(total nuevos hasta ahora: {total_nuevos})", file=sys.stderr)
+
+        if n % 20 == 0:
+            guardar_progreso(hechos)
+            guardar_data(datos)
+
+    guardar_progreso(hechos)
+    datos["actualizado"] = time.strftime("%Y-%m-%d %H:%M UTC")
+    guardar_data(datos)
+
+    print(f"\n[resumen] torneos procesados: {len(pendientes)}", file=sys.stderr)
+    print(f"[resumen] partidos nuevos importados: {total_nuevos}", file=sys.stderr)
+    print(f"[resumen] total en data.json: {len(datos.get('matches', []))}", file=sys.stderr)
+    print(f"[resumen] torneos sin ningun Match reconocido: {sin_match}", file=sys.stderr)
+    print(f"[resumen] torneos con error de red (reintentar): {con_error}", file=sys.stderr)
+
+    if sin_match > len(pendientes) * 0.5 and len(pendientes) > 5:
+        print("\n[AVISO] mas de la mitad de los torneos no dieron ningun partido.",
+              file=sys.stderr)
+        print("Antes de lanzar el barrido completo, usa --debug-pagina con uno de",
+              file=sys.stderr)
+        print("esos torneos para ver si el formato real difiere del esperado.",
+              file=sys.stderr)
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
