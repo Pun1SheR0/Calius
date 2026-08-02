@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-08-01",
+ "actualizado": "2026-08-02 01:30 UTC",
  "fuente": "EGamersWorld — https://es.egamersworld.com/fifa/matches/history",
  "matches": [
   {
@@ -181,6 +181,249 @@
    "ga": 4,
    "gb": 3,
    "note": "FC Pro 26 WC - League Stage"
+  },
+  {
+   "id": "liq-6248f37909402b4a",
+   "a": "nicolas99fc",
+   "b": "Big",
+   "ga": 8,
+   "gb": 0,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-fb425b91742a423d",
+   "a": "GugaFerraz",
+   "b": "Kiketo",
+   "ga": 7,
+   "gb": 6,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-6915a8ed6f999611",
+   "a": "nicolas99fc",
+   "b": "GugaFerraz",
+   "ga": 5,
+   "gb": 6,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-9cdfa409f857f4d6",
+   "a": "Big",
+   "b": "Kiketo",
+   "ga": 1,
+   "gb": 5,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-3e9957a60664786c",
+   "a": "nicolas99fc",
+   "b": "Kiketo",
+   "ga": 6,
+   "gb": 2,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-455e46a1091eaca2",
+   "a": "GuiBarros",
+   "b": "Dudu27",
+   "ga": 3,
+   "gb": 2,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-d711e7e0e97b2cfb",
+   "a": "Ezecorrea1802",
+   "b": "Rampazzo",
+   "ga": 6,
+   "gb": 4,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-8c5d027ae58504dc",
+   "a": "GuiBarros",
+   "b": "Ezecorrea1802",
+   "ga": 8,
+   "gb": 7,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-76ddee19ddea691f",
+   "a": "Dudu27",
+   "b": "Rampazzo",
+   "ga": 3,
+   "gb": 5,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-7b0f34cfa8a12331",
+   "a": "Ezecorrea1802",
+   "b": "Rampazzo",
+   "ga": 2,
+   "gb": 7,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-b3c7db4b78b244ee",
+   "a": "Paulo Neto",
+   "b": "zuvi17",
+   "ga": 11,
+   "gb": 4,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-89f1915db8480c63",
+   "a": "Cowen",
+   "b": "Giuliano2001",
+   "ga": 5,
+   "gb": 3,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-94e807a6e11d49ff",
+   "a": "Paulo Neto",
+   "b": "Cowen",
+   "ga": 9,
+   "gb": 7,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-b802fac1d7846e38",
+   "a": "zuvi17",
+   "b": "Giuliano2001",
+   "ga": 5,
+   "gb": 6,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-b713f5e0d3b44d5d",
+   "a": "Cowen",
+   "b": "Giuliano2001",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-912aba2a4cd8db7f",
+   "a": "PHzin",
+   "b": "derpeedcl",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-fb78dee19c1f2aa7",
+   "a": "Young",
+   "b": "Joelr_21",
+   "ga": 6,
+   "gb": 8,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-95d9ad598151c347",
+   "a": "PHzin",
+   "b": "Joelr_21",
+   "ga": 5,
+   "gb": 3,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-0411dac977303b52",
+   "a": "derpeedcl",
+   "b": "Young",
+   "ga": 6,
+   "gb": 4,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-3943935a0622922d",
+   "a": "Joelr_21",
+   "b": "derpeedcl",
+   "ga": 5,
+   "gb": 6,
+   "date": "2026-05-02",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-aa39e1f9ace24eab",
+   "a": "GugaFerraz",
+   "b": "derpeedcl",
+   "ga": 6,
+   "gb": 4,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-f9cb9d2bc29fd81d",
+   "a": "Paulo Neto",
+   "b": "Rampazzo",
+   "ga": 6,
+   "gb": 5,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-9636553659da27f0",
+   "a": "PHzin",
+   "b": "nicolas99fc",
+   "ga": 4,
+   "gb": 3,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-b1bd09d92a9183e0",
+   "a": "GuiBarros",
+   "b": "Cowen",
+   "ga": 2,
+   "gb": 5,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-606d310e026e1db8",
+   "a": "GugaFerraz",
+   "b": "Paulo Neto",
+   "ga": 4,
+   "gb": 8,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-c78cc26442e4314a",
+   "a": "PHzin",
+   "b": "Cowen",
+   "ga": 5,
+   "gb": 3,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-7ac44e7aeb2092cf",
+   "a": "Paulo Neto",
+   "b": "PHzin",
+   "ga": 7,
+   "gb": 3,
+   "date": "2026-05-03",
+   "note": "Liquipedia: ELibertadores/2026"
   }
  ]
 }
