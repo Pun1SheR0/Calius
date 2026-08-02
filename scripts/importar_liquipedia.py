@@ -3,37 +3,16 @@
 Importa el historico de partidos de EA SPORTS FC desde Liquipedia.
 
 Es un trabajo de UNA SOLA VEZ (backfill), no la actualizacion nocturna.
-Recorre Category:Finished_Tournaments (~1.578 paginas en el momento de
-escribir esto), lee el texto fuente de cada torneo por la API oficial del
-wiki, y extrae los partidos de las plantillas {{Match|...}}.
-
-Por que esto es distinto de "scraping":
-  - Usa exclusivamente api.php (accion=query), nunca paginas HTML generadas.
-    Liquipedia permite esto sin pedir permiso, ver:
-    https://liquipedia.net/api-terms-of-use
-  - Respeta 1 peticion cada 2 segundos, tal como exigen sus terminos.
-  - Manda un User-Agent identificable con URL de contacto, tambien exigido.
-  - El contenido es CC-BY-SA: hay que atribuir a Liquipedia como fuente.
-    Este script lo hace automaticamente en cada partido (campo "note").
-
-IMPORTANTE - esto no se ha podido probar contra el sitio real:
-  El entorno donde se escribio este script no tiene salida de red a
-  liquipedia.net. La logica de extraccion de plantillas SI esta probada
-  contra texto sintetico con la sintaxis documentada de Liquipedia
-  (SoloOpponent con score= incrustado), pero la primera ejecucion real
-  puede encontrar variantes no previstas. Por eso:
-    1. Ejecuta primero con --limit 15 para ver un lote pequeno y revisar
-       que los partidos que salen tienen sentido.
-    2. Si "sin_match_reconocido" sale alto en el resumen, pega aqui el
-       texto fuente de una de esas paginas (ver --debug-pagina) y se
-       ajustan los patrones.
-    3. Solo despues, ejecuta sin --limit para el barrido completo
-       (tardara mas de una hora: 1.578 paginas a 1 cada 2 segundos).
+Recorre solo los torneos de la temporada actual (FC 26), lee el texto
+fuente de cada uno por la API oficial del wiki, y extrae los partidos
+de las plantillas {{Match|...}}. Solo se guardan partidos de los
+ultimos N meses (4 por defecto).
 
 Uso:
     python importar_liquipedia.py --limit 15          # prueba
     python importar_liquipedia.py --debug-pagina "FC_Pro_26/World_Championship"
     python importar_liquipedia.py                      # barrido completo
+    python importar_liquipedia.py --meses 3            # ultimos 3 meses
 """
 
 from __future__ import annotations
@@ -49,7 +28,12 @@ import requests
 
 WIKI = "easportsfc"
 API = f"https://liquipedia.net/{WIKI}/api.php"
-CATEGORIA = "Category:Finished Tournaments"
+
+# Solo torneos de la version actual del juego (FC 26). Mucho mas acotado
+# que "Finished Tournaments" (1.578 paginas desde 2011): esta categoria
+# la llevan todos los torneos de esta temporada, confirmado en varias
+# paginas reales (eSerie_A/2026, eLPF/2026, EChampions_League/2026).
+CATEGORIA = "Category:EA SPORTS FC 26 Competitions"
 
 # Liquipedia exige un User-Agent identificable con URL de contacto.
 UA = "CaliusMarcador/1.0 (+https://github.com/Pun1SheR0/Calius)"
@@ -58,10 +42,6 @@ PAUSA = 2.1  # 1 peticion cada 2s como minimo; margen extra por seguridad
 SALIDA = os.environ.get("SALIDA", "data.json")
 PROGRESO = os.environ.get("PROGRESO", "liq_progreso.json")
 
-
-# ---------------------------------------------------------------------------
-# Cliente API
-# ---------------------------------------------------------------------------
 
 class LiquipediaAPI:
     def __init__(self):
@@ -79,9 +59,22 @@ class LiquipediaAPI:
         self._ultima = time.time()
 
     def get(self, **params) -> dict:
-        self._esperar()
+        """Si Liquipedia responde 429 (limite de peticiones), no es
+        necesariamente por nosotros: los runners de GitHub Actions
+        comparten IP con miles de proyectos ajenos. Se espera y se
+        reintenta en vez de rendirse al primer golpe."""
         params["format"] = "json"
-        r = self.sesion.get(API, params=params, timeout=30)
+        for intento in range(4):
+            self._esperar()
+            r = self.sesion.get(API, params=params, timeout=30)
+            if r.status_code == 429:
+                espera = int(r.headers.get("Retry-After", 30 * (intento + 1)))
+                print(f"[aviso] 429 de Liquipedia, esperando {espera}s (intento {intento + 1}/4)",
+                      file=sys.stderr)
+                time.sleep(espera)
+                continue
+            r.raise_for_status()
+            return r.json()
         r.raise_for_status()
         return r.json()
 
@@ -123,10 +116,6 @@ class LiquipediaAPI:
         return None
 
 
-# ---------------------------------------------------------------------------
-# Analizador de plantillas Match (probado en parser_test.py contra sintetico)
-# ---------------------------------------------------------------------------
-
 RE_OPONENTE = re.compile(r'opponent(\d)\s*=\s*\{\{\s*\w*Opponent\s*\|(.*?)\}\}', re.S)
 RE_FECHA = re.compile(r'([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})')
 
@@ -164,7 +153,14 @@ def parsear_oponente(bloque_interno: str) -> tuple[str, str | None]:
     return nombre, score
 
 
-def parsear_match(bloque: str, torneo: str) -> dict | None:
+def dentro_de_ventana(fecha_iso: str, cutoff_iso: str) -> bool:
+    """Compara fechas ISO como texto: funciona porque YYYY-MM-DD ordena
+    igual como cadena que como fecha. Sin fecha -> se descarta: mejor
+    perder algun partido raro que colar algo de fuera de temporada."""
+    return bool(fecha_iso) and fecha_iso >= cutoff_iso
+
+
+def parsear_match(bloque: str, torneo: str, cutoff_iso: str) -> dict | None:
     opos = {}
     for idx, interno in RE_OPONENTE.findall(bloque):
         opos[idx] = parsear_oponente(interno)
@@ -193,6 +189,9 @@ def parsear_match(bloque: str, torneo: str) -> dict | None:
         except ValueError:
             pass
 
+    if not dentro_de_ventana(date, cutoff_iso):
+        return None
+
     return {"a": n1, "b": n2, "ga": g1, "gb": g2, "date": date,
             "note": f"Liquipedia: {torneo}"}
 
@@ -204,10 +203,6 @@ def id_estable(titulo: str, indice: int, m: dict) -> str:
     base = f"{titulo}#{indice}#{m['a']}#{m['b']}#{m['ga']}#{m['gb']}"
     return "liq-" + hashlib.sha1(base.encode("utf-8")).hexdigest()[:16]
 
-
-# ---------------------------------------------------------------------------
-# Progreso (para poder cortar y reanudar un barrido de mas de una hora)
-# ---------------------------------------------------------------------------
 
 def cargar_progreso() -> set[str]:
     try:
@@ -235,108 +230,8 @@ def guardar_data(datos: dict) -> None:
         json.dump(datos, f, ensure_ascii=False, indent=1)
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
-
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None,
                      help="probar solo con N torneos (recomendado: 15 la primera vez)")
     ap.add_argument("--debug-pagina", type=str, default=None,
-                     help="vuelca el wikitext crudo de una pagina y sale, sin procesar nada mas")
-    args = ap.parse_args()
-
-    api = LiquipediaAPI()
-
-    if args.debug_pagina:
-        wt = api.wikitext(args.debug_pagina)
-        if wt is None:
-            print(f"[debug] pagina no encontrada: {args.debug_pagina}", file=sys.stderr)
-            return 1
-        print(wt[:6000])
-        return 0
-
-    print("[info] listando torneos terminados...", file=sys.stderr)
-    titulos = api.listar_torneos(limite=args.limit)
-    print(f"[info] {len(titulos)} torneos a procesar", file=sys.stderr)
-
-    hechos = cargar_progreso()
-    pendientes = [t for t in titulos if t not in hechos]
-    if len(pendientes) < len(titulos):
-        print(f"[info] reanudando: {len(titulos) - len(pendientes)} ya procesados antes",
-              file=sys.stderr)
-
-    datos = cargar_data()
-    conocidos = {m.get("id") for m in datos.get("matches", [])}
-
-    total_nuevos = 0
-    sin_match = 0
-    con_error = 0
-
-    for n, titulo in enumerate(pendientes, 1):
-        try:
-            wt = api.wikitext(titulo)
-        except requests.RequestException as e:
-            print(f"[aviso] {titulo}: {type(e).__name__}, se reintentara en la proxima ejecucion",
-                  file=sys.stderr)
-            con_error += 1
-            continue
-
-        if wt is None:
-            hechos.add(titulo)
-            continue
-
-        bloques = encontrar_bloques_match(wt)
-        if not bloques:
-            sin_match += 1
-
-        nuevos_aqui = 0
-        for i, bloque in enumerate(bloques):
-            m = parsear_match(bloque, titulo)
-            if not m:
-                continue
-            mid = id_estable(titulo, i, m)
-            if mid in conocidos:
-                continue
-            datos.setdefault("matches", []).append({"id": mid, **m})
-            conocidos.add(mid)
-            nuevos_aqui += 1
-            total_nuevos += 1
-
-        hechos.add(titulo)
-
-        if n % 25 == 0 or nuevos_aqui:
-            print(f"[{n}/{len(pendientes)}] {titulo}: +{nuevos_aqui} partidos "
-                  f"(total nuevos hasta ahora: {total_nuevos})", file=sys.stderr)
-
-        # Guardado incremental: si esto se corta a mitad de camino
-        # (timeout, red), no se pierde el trabajo ya hecho.
-        if n % 20 == 0:
-            guardar_progreso(hechos)
-            guardar_data(datos)
-
-    guardar_progreso(hechos)
-    datos["actualizado"] = time.strftime("%Y-%m-%d %H:%M UTC")
-    guardar_data(datos)
-
-    print(f"\n[resumen] torneos procesados: {len(pendientes)}", file=sys.stderr)
-    print(f"[resumen] partidos nuevos importados: {total_nuevos}", file=sys.stderr)
-    print(f"[resumen] total en data.json: {len(datos.get('matches', []))}", file=sys.stderr)
-    print(f"[resumen] torneos sin ningun Match reconocido: {sin_match}", file=sys.stderr)
-    print(f"[resumen] torneos con error de red (reintentar): {con_error}", file=sys.stderr)
-
-    if sin_match > len(pendientes) * 0.5 and len(pendientes) > 5:
-        print("\n[AVISO] mas de la mitad de los torneos no dieron ningun partido.",
-              file=sys.stderr)
-        print("Antes de lanzar el barrido completo, usa --debug-pagina con uno de",
-              file=sys.stderr)
-        print("esos torneos para ver si el formato real difiere del esperado.",
-              file=sys.stderr)
-        return 1
-
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
