@@ -302,10 +302,8 @@ def main() -> int:
 
         hechos.add(titulo)
 
-        if n % 25 == 0 or nuevos_aqui:
-            print(f"[{n}/{len(pendientes)}] {titulo}: +{nuevos_aqui} partidos "
-                  f"(total nuevos hasta ahora: {total_nuevos})", file=sys.stderr)
-
+        print(f"[{n}/{len(pendientes)}] {titulo}: {len(bloques)} bloques, "
+              f"+{nuevos_aqui} nuevos", file=sys.stderr)
         if n % 20 == 0:
             guardar_progreso(hechos)
             guardar_data(datos)
