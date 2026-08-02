@@ -1,808 +1,186 @@
 {
- "actualizado": "2026-08-02 00:25 UTC",
- "fuente": "EGamersWorld - https://egamersworld.com",
+ "actualizado": "2026-08-01",
+ "fuente": "EGamersWorld — https://es.egamersworld.com/fifa/matches/history",
  "matches": [
   {
-   "id": "yRdB8D8xF",
+   "id": "wc26-001",
    "date": "2026-07-26",
-   "a": "Levyfinn",
-   "b": "Rvplegend",
+   "a": "levyfinn",
+   "b": "RvPLegend",
    "ga": 5,
    "gb": 6,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Final"
   },
   {
-   "id": "A3wXK-Z9U",
+   "id": "wc26-002",
    "date": "2026-07-26",
-   "a": "Rvplegend",
+   "a": "RvPLegend",
    "b": "Nassada",
    "ga": 10,
    "gb": 8,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Semis"
   },
   {
-   "id": "er_bcE4cI",
+   "id": "wc26-003",
    "date": "2026-07-26",
    "a": "Bonanno",
-   "b": "Levyfinn",
+   "b": "levyfinn",
    "ga": 2,
    "gb": 6,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Semis"
   },
   {
-   "id": "HKBR95I_tI",
+   "id": "wc26-004",
    "date": "2026-07-26",
    "a": "Nassada",
    "b": "Vejrgang",
    "ga": 11,
    "gb": 4,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Cuartos"
   },
   {
-   "id": "ugQ6QMqWXQ",
+   "id": "wc26-005",
    "date": "2026-07-26",
    "a": "Alihan",
-   "b": "Rvplegend",
+   "b": "RvPLegend",
    "ga": 0,
    "gb": 1,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Cuartos"
   },
   {
-   "id": "t2iauripqK",
+   "id": "wc26-006",
    "date": "2026-07-26",
-   "a": "Levyfinn",
-   "b": "Nicolas99fc",
+   "a": "levyfinn",
+   "b": "nicolas99fc",
    "ga": 5,
    "gb": 3,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Cuartos"
   },
   {
-   "id": "u0_6OS0n-",
+   "id": "wc26-007",
    "date": "2026-07-26",
    "a": "Bonanno",
-   "b": "Hhezers",
+   "b": "HHezerS",
    "ga": 12,
    "gb": 6,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - Cuartos"
   },
   {
-   "id": "WLINaIbJOD",
+   "id": "wc26-008",
    "date": "2026-07-25",
-   "a": "K1john",
-   "b": "Dfernandes",
+   "a": "K1John",
+   "b": "DFernandes",
    "ga": 5,
    "gb": 6,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "neto-Z7xkdumBFd",
+   "id": "wc26-009",
    "date": "2026-07-25",
    "a": "Obrun2002",
-   "b": "Paulo",
+   "b": "Paulo Neto",
    "ga": 5,
    "gb": 9,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "5WHIWqEKw",
+   "id": "wc26-010",
    "date": "2026-07-25",
-   "a": "Chrisdeboer",
+   "a": "ChrisDeBoer",
    "b": "Matias",
    "ga": 8,
    "gb": 10,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "fzXbSCmtet",
+   "id": "wc26-011",
    "date": "2026-07-25",
-   "a": "Karimisbak",
+   "a": "KarimIsbak",
    "b": "Virgil",
    "ga": 4,
    "gb": 2,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "5qbwtlePe3",
+   "id": "wc26-012",
    "date": "2026-07-25",
-   "a": "Hhezers",
+   "a": "HHezerS",
    "b": "Redlac",
    "ga": 9,
    "gb": 5,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "rSIjaMi43b",
+   "id": "wc26-013",
    "date": "2026-07-25",
-   "a": "Levi De Weerd",
-   "b": "Levyfinn",
+   "a": "Levi de Weerd",
+   "b": "levyfinn",
    "ga": 7,
    "gb": 1,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "1yIb9lmw13",
+   "id": "wc26-014",
    "date": "2026-07-25",
    "a": "Phzin",
    "b": "Neat",
    "ga": 4,
    "gb": 5,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "AgWSy92bf8",
+   "id": "wc26-015",
    "date": "2026-07-25",
-   "a": "Abomakkah",
+   "a": "AboMakkah",
    "b": "Ilian",
    "ga": 8,
    "gb": 7,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "9oQyzUtUiO",
+   "id": "wc26-016",
    "date": "2026-07-25",
    "a": "Vejrgang",
-   "b": "Danipitbull",
+   "b": "DaniPitbull",
    "ga": 10,
    "gb": 9,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "LTPLg5M543",
+   "id": "wc26-017",
    "date": "2026-07-25",
    "a": "Nassada",
-   "b": "Marwanmc9",
+   "b": "MarwanMC9",
    "ga": 10,
    "gb": 5,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "m4S9d54z1w",
+   "id": "wc26-018",
    "date": "2026-07-25",
    "a": "Alihan",
-   "b": "Milkalove",
+   "b": "MilkaLove",
    "ga": 8,
    "gb": 4,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "WMxBYIsrdE",
+   "id": "wc26-019",
    "date": "2026-07-25",
-   "a": "Msdossary",
-   "b": "Emreyilmaz",
+   "a": "MSDossary",
+   "b": "EmreYilmaz",
    "ga": 6,
    "gb": 1,
-   "note": "EGW"
+   "note": "FC Pro 26 WC - League Stage"
   },
   {
-   "id": "MmK1BEMjG",
+   "id": "wc26-020",
    "date": "2026-07-25",
-   "a": "Rvplegend",
-   "b": "Jafonsogv",
+   "a": "RvPLegend",
+   "b": "JAfonsoGV",
    "ga": 4,
    "gb": 3,
-   "note": "EGW"
-  },
-  {
-   "id": "liq-a52e2b0bd7295035",
-   "a": "Mubeast FC",
-   "b": "Agge",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-9a136887aa11456a",
-   "a": "Peter Mølgaard",
-   "b": "Brylle",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-133745fe7772c485",
-   "a": "Cjuul",
-   "b": "Hedegaard9",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-021347d2d5cb77d2",
-   "a": "Patrick Eckhoff",
-   "b": "didierdorgba",
-   "ga": 3,
-   "gb": 4,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-116d913527789951",
-   "a": "PrimeTurbo",
-   "b": "Chanaka",
-   "ga": 5,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-3ff298f263c868e0",
-   "a": "Mandrup",
-   "b": "Barnewitz",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-f18349ac04bb6ed9",
-   "a": "Oli",
-   "b": "MrSuit",
-   "ga": 3,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-c4d105461f5b333f",
-   "a": "elsker fck",
-   "b": "Mikeabel",
-   "ga": 3,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-7e131f55d1c1080c",
-   "a": "Agge",
-   "b": "eter Mølgaard",
-   "ga": 1,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-9d4e0d8617744573",
-   "a": "Hedegaard9",
-   "b": "didierdorgba",
-   "ga": 1,
-   "gb": 4,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-2e8032ae21fafad2",
-   "a": "PrimeTurbo",
-   "b": "Barnewitz",
-   "ga": 3,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-2678af806785bbec",
-   "a": "Oli",
-   "b": "elsker fck",
-   "ga": 0,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-192188ed6cf6b1a6",
-   "a": "Agge",
-   "b": "didierdorgba",
-   "ga": 3,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-ff5dd80e0284059d",
-   "a": "PrimeTurbo",
-   "b": "elsker fck",
-   "ga": 5,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-6bf51ae034086cab",
-   "a": "Agge",
-   "b": "PrimeTurbo",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Aalborg Open/2014"
-  },
-  {
-   "id": "liq-6223542e54f2b5c4",
-   "a": "ATTACLE",
-   "b": "Ramzez666",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-e9fd3a3e497743bc",
-   "a": "Dari",
-   "b": "AmpZeFFiLoS",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-4ddd440a45c1a822",
-   "a": "NuClearBeSt",
-   "b": "CVRNIVAL",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-21bf56ef148857e3",
-   "a": "Bensaiya",
-   "b": "SixNuTz",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-d01db8dccbcfca99",
-   "a": "Vuzela",
-   "b": "JameSlick",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-51db232ab37ed7f3",
-   "a": "JubJub",
-   "b": "PinkyPoint",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-d1aeff82e2333d1b",
-   "a": "TDKeane",
-   "b": "Michael04",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-a3322340c61becd0",
-   "a": "Tantay",
-   "b": "BOMBx",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-51d422b0199f00f8",
-   "a": "ATTACLE",
-   "b": "Dari",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-69c61ed74d88de92",
-   "a": "CVRNIVAL",
-   "b": "Bensaiya",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-79b0223ac4963589",
-   "a": "Vuzela",
-   "b": "JubJub",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-41e81902d26a28fd",
-   "a": "Michael04",
-   "b": "Tantay",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-e91c4850dd3907a6",
-   "a": "Dari",
-   "b": "Bensaiya",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-424959cae58571d8",
-   "a": "Vuzela",
-   "b": "Michael04",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-3723e90b47dc3b14",
-   "a": "Bensaiya",
-   "b": "Vuzela",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-8cdc7c2ffcd16ef2",
-   "a": "Dari",
-   "b": "Michael04",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Advice/Thailand Championship"
-  },
-  {
-   "id": "liq-a7b4497d118f215c",
-   "a": "Marktpp",
-   "b": "SirX",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-c3975a43799ca479",
-   "a": "KnopKnap",
-   "b": "DUMDUYxNICE17",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-0f33517aea35e6c6",
-   "a": "JubJub",
-   "b": "Dari",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-b4ae65dec1c93935",
-   "a": "xAsTCzMx",
-   "b": "DS126",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-9c9ab3acd8f4e337",
-   "a": "JETzeed",
-   "b": "CVRNIVAL",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-4701c48c7a65f434",
-   "a": "MOSER",
-   "b": "z0diac",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-4a0b073365728b80",
-   "a": "MandzuKitN88",
-   "b": "AmpZeFFiLoS",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-9473c753b58cfa6a",
-   "a": "Fdinson",
-   "b": "AUTxTaChurm",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-09ae871e316a4270",
-   "a": "SirX",
-   "b": "KnopKnap",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-d7c45d9538f4142d",
-   "a": "Dari",
-   "b": "xAsTCzMx",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-7a8d51502bc13570",
-   "a": "CVRNIVAL",
-   "b": "MOSER",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-e2c1152d80415490",
-   "a": "AmpZeFFiLoS",
-   "b": "AUTxTaChurm",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-ba5d877f3422fe72",
-   "a": "SirX",
-   "b": "Dari",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-cde0d31c08919bdd",
-   "a": "MOSER",
-   "b": "AmpZeFFiLoS",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-b7169694d844ecd4",
-   "a": "SirX",
-   "b": "AmpZeFFiLoS",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-e883c4c82248bced",
-   "a": "Dari",
-   "b": "MOSER",
-   "ga": 2,
-   "gb": 1,
-   "date": "",
-   "note": "Liquipedia: AIS eSport/FIFA Online 4/Solo"
-  },
-  {
-   "id": "liq-815f8e1d511a9504",
-   "a": "fifasnubben4",
-   "b": "vukasovic99",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-001cd738644e8171",
-   "a": "hazze2003",
-   "b": "razzelito45",
-   "ga": 0,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-7765199bc17c2829",
-   "a": "spassejr",
-   "b": "vukasovic03",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-cff9b6b2f49a5782",
-   "a": "linus_nilsson",
-   "b": "hultmark14",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-0fa7ea7396d4a717",
-   "a": "fifasnubben4",
-   "b": "razzelito45",
-   "ga": 1,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-dad9ecf7143168b2",
-   "a": "spassejr",
-   "b": "hultmark14",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-e5adae0e2dbaa34e",
-   "a": "razzelito45",
-   "b": "spassejr",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-58db4ba458d70dcb",
-   "a": "fifasnubben4",
-   "b": "hultmark14",
-   "ga": 2,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: Alblebish e-Trophy 2021"
-  },
-  {
-   "id": "liq-727a3afc70d80aef",
-   "a": "wdc",
-   "b": "orangewolf",
-   "ga": 3,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-c30ce7187940911a",
-   "a": "legend gaming",
-   "b": "nrsports",
-   "ga": 2,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-994ba9318c38c4b9",
-   "a": "plm",
-   "b": "ms chonburi",
-   "ga": 2,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-cbd0179ab7d6407e",
-   "a": "mith",
-   "b": "faze o",
-   "ga": 1,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-cc3c9adf12369f4b",
-   "a": "wdc",
-   "b": "nrsports",
-   "ga": 0,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-164b2e81b48ee05a",
-   "a": "ms chonburi",
-   "b": "faze o",
-   "ga": 1,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-d092b7f1e185348a",
-   "a": "nrsports",
-   "b": "faze o",
-   "ga": 2,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-f984f327365920f5",
-   "a": "orangewolf",
-   "b": "legend gaming",
-   "ga": 3,
-   "gb": 0,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-cc8830df3570d069",
-   "a": "plm",
-   "b": "mith",
-   "ga": 0,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-ac910abbe44b23f2",
-   "a": "ms chonburi",
-   "b": "orangewolf",
-   "ga": 2,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-e3bf4d40762dedc4",
-   "a": "wdc",
-   "b": "mith",
-   "ga": 3,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-c4b2bb0fdbb1a227",
-   "a": "orangewolf",
-   "b": "wdc",
-   "ga": 1,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-58bb0587020f3c64",
-   "a": "nrsports",
-   "b": "wdc",
-   "ga": 2,
-   "gb": 3,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
-  },
-  {
-   "id": "liq-a9e7d981240f334e",
-   "a": "faze o",
-   "b": "wdc",
-   "ga": 3,
-   "gb": 2,
-   "date": "",
-   "note": "Liquipedia: ALLGAME Tournament/FIFA Online 4"
+   "note": "FC Pro 26 WC - League Stage"
   }
- ],
- "via": "r.jina.ai"
+ ]
 }
