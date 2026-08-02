@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-08-02 02:09 UTC",
+ "actualizado": "2026-08-02 02:16 UTC",
  "fuente": "EGamersWorld — https://es.egamersworld.com/fifa/matches/history",
  "matches": [
   {
@@ -424,6 +424,1248 @@
    "gb": 3,
    "date": "2026-05-03",
    "note": "Liquipedia: ELibertadores/2026"
+  },
+  {
+   "id": "liq-a8edf29db4ebba79",
+   "a": "Moreirense FC",
+   "b": "Estrela Amadora",
+   "ga": 3,
+   "gb": 4,
+   "date": "2026-04-19",
+   "note": "Liquipedia: ELiga Portugal/2026"
+  },
+  {
+   "id": "liq-677b626a59c7eb37",
+   "a": "Beşiktaş Esports",
+   "b": "Galatasaray Esports",
+   "ga": 5,
+   "gb": 10,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-320821f38b530047",
+   "a": "Trabzonspor",
+   "b": "Kocaelispor",
+   "ga": 4,
+   "gb": 6,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-9116344bbb8ea316",
+   "a": "Fenerbahçe Esports",
+   "b": "Antalyaspor Espor",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-eecf0b34129257fa",
+   "a": "Göztepe",
+   "b": "Samsunspor",
+   "ga": 4,
+   "gb": 5,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-10a904cd754ad701",
+   "a": "Galatasaray Esports",
+   "b": "Kocaelispor",
+   "ga": 6,
+   "gb": 5,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-fb7f9678f6a755d8",
+   "a": "Fenerbahçe Esports",
+   "b": "Samsunspor",
+   "ga": 6,
+   "gb": 3,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-264db5654c3921b1",
+   "a": "Galatasaray Esports",
+   "b": "Fenerbahçe Esports",
+   "ga": 4,
+   "gb": 8,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-f04993995aaee038",
+   "a": "Beşiktaş Esports",
+   "b": "Trabzonspor",
+   "ga": 9,
+   "gb": 7,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-ca9a27199eaaa368",
+   "a": "Antalyaspor Espor",
+   "b": "Göztepe",
+   "ga": 5,
+   "gb": 6,
+   "date": "2026-04-21",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-6b8da5832328bb30",
+   "a": "Samsunspor",
+   "b": "Beşiktaş Esports",
+   "ga": 6,
+   "gb": 3,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-acd58cae8a203f96",
+   "a": "Kocaelispor",
+   "b": "Göztepe",
+   "ga": 8,
+   "gb": 3,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-bc4dd8b7515be280",
+   "a": "Samsunspor",
+   "b": "Kocaelispor",
+   "ga": 3,
+   "gb": 5,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-35d0d8a5414c9437",
+   "a": "Galatasaray Esports",
+   "b": "Kocaelispor",
+   "ga": 10,
+   "gb": 12,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-bf2f043419850523",
+   "a": "Fenerbahçe Esports",
+   "b": "Kocaelispor",
+   "ga": 7,
+   "gb": 10,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-970d75241f9033ea",
+   "a": "Fenerbahçe Esports",
+   "b": "Kocaelispor",
+   "ga": 5,
+   "gb": 6,
+   "date": "2026-04-23",
+   "note": "Liquipedia: ESuper Kupa/2026"
+  },
+  {
+   "id": "liq-660c31012df3ab85",
+   "a": "SL Benfica",
+   "b": "Grupo Desportivo Tourizense",
+   "ga": 3,
+   "gb": 1,
+   "date": "2026-06-06",
+   "note": "Liquipedia: FPF/Masters/2026"
+  },
+  {
+   "id": "liq-08b0b22e63bdb6d7",
+   "a": "SCU Torreense",
+   "b": "SC Braga",
+   "ga": 2,
+   "gb": 3,
+   "date": "2026-06-06",
+   "note": "Liquipedia: FPF/Masters/2026"
+  },
+  {
+   "id": "liq-7b64304f1ef1d1c4",
+   "a": "Real Sociedad",
+   "b": "RCD Mallorca",
+   "ga": 9,
+   "gb": 5,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-7365d12b552070a6",
+   "a": "Villarreal CF",
+   "b": "VCF eSports",
+   "ga": 2,
+   "gb": 5,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-72c388a8ae846cc6",
+   "a": "Real Sporting",
+   "b": "CD Leganés",
+   "ga": 6,
+   "gb": 2,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-a6d1f59ee77659e7",
+   "a": "Granada CF",
+   "b": "Getafe CF",
+   "ga": 4,
+   "gb": 5,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-9cde680c51f13c5c",
+   "a": "Cádiz CF",
+   "b": "UD Las Palmas",
+   "ga": 4,
+   "gb": 3,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-d43e223ed8cad317",
+   "a": "Real Valladolid FC",
+   "b": "SD Eibar",
+   "ga": 4,
+   "gb": 6,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-f3fe447e5ade96e4",
+   "a": "Málaga CF",
+   "b": "SD Huesca",
+   "ga": 5,
+   "gb": 2,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-7ca143599ce36c17",
+   "a": "FC Andorra",
+   "b": "Albacete BP",
+   "ga": 8,
+   "gb": 5,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-e6a9750a5a6d08f6",
+   "a": "Real Sociedad",
+   "b": "VCF eSports",
+   "ga": 9,
+   "gb": 3,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-41f2b6aedbba307a",
+   "a": "Real Sporting",
+   "b": "Getafe CF",
+   "ga": 10,
+   "gb": 4,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-140873953d23e8b5",
+   "a": "Cádiz CF",
+   "b": "SD Eibar",
+   "ga": 7,
+   "gb": 6,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-36e64c19e1719fa6",
+   "a": "Málaga CF",
+   "b": "FC Andorra",
+   "ga": 6,
+   "gb": 5,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-47b4eb3e4687c3b2",
+   "a": "Real Sociedad",
+   "b": "Real Sporting",
+   "ga": 9,
+   "gb": 5,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-79b37b66309596c9",
+   "a": "Cádiz CF",
+   "b": "Málaga CF",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-cbbcfcd91a290080",
+   "a": "Real Sociedad",
+   "b": "Cádiz CF",
+   "ga": 8,
+   "gb": 7,
+   "date": "2026-04-11",
+   "note": "Liquipedia: LALIGA FC Pro/2026/Finals"
+  },
+  {
+   "id": "liq-56fec0d384a1d6f4",
+   "a": "Kunglou357",
+   "b": "Valerie Uchiha",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-fef44812a9489c03",
+   "a": "Kaylan",
+   "b": "Tigzp2",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-53a3ece7908cb8fe",
+   "a": "Aasim Lamara",
+   "b": "Einino",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-8db173ef9844efc2",
+   "a": "Not Zxhir",
+   "b": "Jxdn55",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-af8f0da404337f2e",
+   "a": "Bozz Zonkee",
+   "b": "Crmbz Riri",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-89bb5c0d5122706d",
+   "a": "ZaidApril",
+   "b": "Fraggerwolfie",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-22f7a3160730b103",
+   "a": "imo99",
+   "b": "Heero",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-c0c1ce95e271aad5",
+   "a": "Bobo",
+   "b": "Dalelinho",
+   "ga": 0,
+   "gb": 1,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-66314150ab0cbe7e",
+   "a": "Kunglou357",
+   "b": "Kaylan",
+   "ga": 0,
+   "gb": 1,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-83543de244f6a38e",
+   "a": "Aasim Lamara",
+   "b": "Not Zxhir",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-3fe493cb6fafa28b",
+   "a": "Bozz Zonkee",
+   "b": "ZaidApril",
+   "ga": 0,
+   "gb": 1,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-b65b7f0a3fe49d96",
+   "a": "imo99",
+   "b": "Dalelinho",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-af049171ee650461",
+   "a": "Kaylan",
+   "b": "Aasim Lamara",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-891cbb79aacf1d42",
+   "a": "ZaidApril",
+   "b": "imo99",
+   "ga": 1,
+   "gb": 0,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-7645a6039b631e6b",
+   "a": "Kaylan",
+   "b": "ZaidApril",
+   "ga": 3,
+   "gb": 2,
+   "date": "2026-05-29",
+   "note": "Liquipedia: RBLZ Gaming/South Africa Cup"
+  },
+  {
+   "id": "liq-07ddcf88ad8833ad",
+   "a": "IvanSTal",
+   "b": "tokkett",
+   "ga": 2,
+   "gb": 0,
+   "date": "2026-05-21",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-5b109f72a6649938",
+   "a": "vovsv",
+   "b": "Pretty_Scream_11",
+   "ga": 2,
+   "gb": 0,
+   "date": "2026-05-21",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-69bc68f403644239",
+   "a": "Abel",
+   "b": "Papa_Chemez",
+   "ga": 2,
+   "gb": 0,
+   "date": "2026-05-21",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-f391774684085c71",
+   "a": "PapaKambekov",
+   "b": "Jelav",
+   "ga": 1,
+   "gb": 2,
+   "date": "2026-05-21",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-650d88df73411748",
+   "a": "IvanSTal",
+   "b": "vovsv",
+   "ga": 2,
+   "gb": 1,
+   "date": "2026-05-21",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-fd36e4ae7df76d5a",
+   "a": "Abel",
+   "b": "Jelav",
+   "ga": 2,
+   "gb": 0,
+   "date": "2026-05-21",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-a77139ce4d0054e4",
+   "a": "IvanSTal",
+   "b": "Abel",
+   "ga": 1,
+   "gb": 2,
+   "date": "2026-05-23",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-a7e587207758c199",
+   "a": "vovsv",
+   "b": "Jelav",
+   "ga": 2,
+   "gb": 1,
+   "date": "2026-05-23",
+   "note": "Liquipedia: Russian Interactive Football Championship/2026"
+  },
+  {
+   "id": "liq-5bc070bb192fda71",
+   "a": "ThamerEra",
+   "b": "ABOYAM14",
+   "ga": 10,
+   "gb": 8,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-1ba0cdaff661858d",
+   "a": "VISION_SAAD",
+   "b": "1OS",
+   "ga": 6,
+   "gb": 12,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-4c34aba2bb4f957a",
+   "a": "LeBrady12",
+   "b": "hxf6",
+   "ga": 13,
+   "gb": 11,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-28285e459ddf1b35",
+   "a": "Ibra_bssm",
+   "b": "iOmar43",
+   "ga": 11,
+   "gb": 12,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-26edb8a9c28c2d65",
+   "a": "Callme_mod",
+   "b": "Redsmodz",
+   "ga": 11,
+   "gb": 10,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-77b21e9b240cd7ab",
+   "a": "S7wi",
+   "b": "xWBTZ",
+   "ga": 11,
+   "gb": 8,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-3ac039d46c0a5368",
+   "a": "AboMakkah",
+   "b": "Msdossary",
+   "ga": 9,
+   "gb": 12,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-a3f4c84b3557094b",
+   "a": "Kiimo7",
+   "b": "AboFawzi",
+   "ga": 11,
+   "gb": 12,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-854c8fbb8496da04",
+   "a": "ThamerEra",
+   "b": "1OS",
+   "ga": 13,
+   "gb": 10,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-71bb9f84f51f7966",
+   "a": "LeBrady12",
+   "b": "iOmar43",
+   "ga": 8,
+   "gb": 9,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-16e19e2f0284a379",
+   "a": "Callme_mod",
+   "b": "S7wi",
+   "ga": 6,
+   "gb": 12,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-ea82e973add0a059",
+   "a": "Msdossary",
+   "b": "AboFawzi",
+   "ga": 10,
+   "gb": 8,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-bf2d67f457c82373",
+   "a": "ThamerEra",
+   "b": "iOmar43",
+   "ga": 15,
+   "gb": 7,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-5dc3b196ac92ca25",
+   "a": "S7wi",
+   "b": "Msdossary",
+   "ga": 5,
+   "gb": 13,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-67a67d5ee909f8b5",
+   "a": "ThamerEra",
+   "b": "Msdossary",
+   "ga": 9,
+   "gb": 10,
+   "date": "2026-05-14",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-809c155e28ebd3e4",
+   "a": "Kiimo7",
+   "b": "AboMakkah",
+   "ga": 17,
+   "gb": 16,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-69dc837e503363ac",
+   "a": "xWBTZ",
+   "b": "Redsmodz",
+   "ga": 2,
+   "gb": 13,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-15899dda800e2aa5",
+   "a": "Ibra_bssm",
+   "b": "hxf6",
+   "ga": 10,
+   "gb": 8,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-e9ce8a82c45743dd",
+   "a": "VISION_SAAD",
+   "b": "ABOYAM14",
+   "ga": 12,
+   "gb": 11,
+   "date": "2026-05-12",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-57ca7749bc02b616",
+   "a": "LeBrady12",
+   "b": "Kiimo7",
+   "ga": 7,
+   "gb": 9,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-89c3c27cd6026f33",
+   "a": "1OS",
+   "b": "Redsmodz",
+   "ga": 14,
+   "gb": 4,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-f6f36671153361ba",
+   "a": "AboFawzi",
+   "b": "Ibra_bssm",
+   "ga": 6,
+   "gb": 12,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-44f05746c3ff0a35",
+   "a": "Callme_mod",
+   "b": "VISION_SAAD",
+   "ga": 10,
+   "gb": 11,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-92c0f3f80715370a",
+   "a": "Kiimo7",
+   "b": "1OS",
+   "ga": 8,
+   "gb": 9,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-6fdccafe3c3f5bb3",
+   "a": "Ibra_bssm",
+   "b": "VISION_SAAD",
+   "ga": 5,
+   "gb": 11,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-d9637494a113d035",
+   "a": "S7wi",
+   "b": "1OS",
+   "ga": 6,
+   "gb": 8,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-610fa544f72e6076",
+   "a": "iOmar43",
+   "b": "VISION_SAAD",
+   "ga": 13,
+   "gb": 7,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-df76936036bdb3de",
+   "a": "1OS",
+   "b": "iOmar43",
+   "ga": 17,
+   "gb": 8,
+   "date": "2026-05-14",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-94c4012e2e7a6407",
+   "a": "ThamerEra",
+   "b": "1OS",
+   "ga": 9,
+   "gb": 8,
+   "date": "2026-05-14",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-2cc1b13fdbc12df8",
+   "a": "Msdossary",
+   "b": "ThamerEra",
+   "ga": 12,
+   "gb": 14,
+   "date": "2026-05-14",
+   "note": "Liquipedia: Saudi eLeague/2026"
+  },
+  {
+   "id": "liq-501e7a0aac6b3f11",
+   "a": "Gorilla",
+   "b": "Stokes",
+   "ga": 6,
+   "gb": 4,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-8c84d697b1bb87ec",
+   "a": "Yaskow",
+   "b": "Jonny",
+   "ga": 6,
+   "gb": 5,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-0cc10685de583cb5",
+   "a": "Magicien",
+   "b": "Tundi",
+   "ga": 6,
+   "gb": 3,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-0b62da0ab7be7b3a",
+   "a": "Stingray",
+   "b": "Fouma",
+   "ga": 6,
+   "gb": 4,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-769ad7545343ae07",
+   "a": "Gorilla",
+   "b": "Yaskow",
+   "ga": 3,
+   "gb": 7,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-8e2ca4e2d6b44ed2",
+   "a": "Magicien",
+   "b": "Stingray",
+   "ga": 10,
+   "gb": 7,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-51af89a21ae8f76c",
+   "a": "Yaskow",
+   "b": "Magicien",
+   "ga": 10,
+   "gb": 6,
+   "date": "2026-06-03",
+   "note": "Liquipedia: Wicked Wednesday/2026/Final Showdown"
+  },
+  {
+   "id": "liq-964a36fba1b55246",
+   "a": "Stokes",
+   "b": "Shawrey",
+   "ga": 10,
+   "gb": 8,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-17531828cbca1e5d",
+   "a": "MaatM",
+   "b": "lorenzinhoo_10",
+   "ga": 4,
+   "gb": 9,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-305c126a52c1f0b0",
+   "a": "tuga810",
+   "b": "DullenMIKE",
+   "ga": 6,
+   "gb": 7,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-d9f9fb199f5c03b3",
+   "a": "RedLac",
+   "b": "Danipitbull",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-1fc09a1471a9deea",
+   "a": "Ollelito",
+   "b": "Gorilla",
+   "ga": 2,
+   "gb": 3,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-b1f8380bf22613cf",
+   "a": "Tom",
+   "b": "Magicien",
+   "ga": 5,
+   "gb": 7,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-e0c8f8d3f9ad287b",
+   "a": "Nassada",
+   "b": "jafonsogv",
+   "ga": 2,
+   "gb": 6,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-b894dd9a87e96dd6",
+   "a": "Levi de Weerd",
+   "b": "Jonny",
+   "ga": 1,
+   "gb": 4,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-1df7d008912d236e",
+   "a": "Stokes",
+   "b": "lorenzinhoo_10",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-a5315934e22bb416",
+   "a": "DullenMIKE",
+   "b": "RedLac",
+   "ga": 7,
+   "gb": 5,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-9cdd0d710cb9526a",
+   "a": "Gorilla",
+   "b": "Magicien",
+   "ga": 8,
+   "gb": 7,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-5d9657f390cc8183",
+   "a": "jafonsogv",
+   "b": "Jonny",
+   "ga": 8,
+   "gb": 5,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-faf93bbf1aa934bd",
+   "a": "Stokes",
+   "b": "DullenMIKE",
+   "ga": 11,
+   "gb": 9,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-156000efec3993cd",
+   "a": "Gorilla",
+   "b": "jafonsogv",
+   "ga": 3,
+   "gb": 7,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-923d8f525cffc8da",
+   "a": "Stokes",
+   "b": "jafonsogv",
+   "ga": 5,
+   "gb": 9,
+   "date": "2026-05-06",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 1"
+  },
+  {
+   "id": "liq-a7163ce8629e5f0b",
+   "a": "Stokes",
+   "b": "RolandCR7x",
+   "ga": 8,
+   "gb": 5,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-187a1e5351349865",
+   "a": "MaatM",
+   "b": "RSDGAWD",
+   "ga": 5,
+   "gb": 11,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-96c253ed78b1fa44",
+   "a": "lorenzinhoo_10",
+   "b": "Yannic0109",
+   "ga": 4,
+   "gb": 5,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-686129d9570d8053",
+   "a": "Gorilla",
+   "b": "xpazzoo",
+   "ga": 8,
+   "gb": 5,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-b3a2e2d59fa91ba6",
+   "a": "RedLac",
+   "b": "Tundi",
+   "ga": 7,
+   "gb": 13,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-3b398985dbdebbd4",
+   "a": "Magicien",
+   "b": "Danipitbull",
+   "ga": 8,
+   "gb": 4,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-deda61e0c23c0c0d",
+   "a": "Ilian",
+   "b": "Coolerfx17",
+   "ga": 7,
+   "gb": 6,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-f0d1e156c64fe893",
+   "a": "Jonny",
+   "b": "Stingray",
+   "ga": 4,
+   "gb": 1,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-d229aef2c33041e8",
+   "a": "Stokes",
+   "b": "RSDGAWD",
+   "ga": 7,
+   "gb": 4,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-351776b96bac49d5",
+   "a": "Yannic0109",
+   "b": "Gorilla",
+   "ga": 4,
+   "gb": 6,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-edf4b0cb25e4cb3d",
+   "a": "Tundi",
+   "b": "Magicien",
+   "ga": 8,
+   "gb": 3,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-121bd47ce12f6911",
+   "a": "Ilian",
+   "b": "Jonny",
+   "ga": 9,
+   "gb": 7,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-feeaac80ccc86813",
+   "a": "Stokes",
+   "b": "Gorilla",
+   "ga": 3,
+   "gb": 9,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-d7c7882540e666ca",
+   "a": "Tundi",
+   "b": "Ilian",
+   "ga": 7,
+   "gb": 1,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-549247d244f81d2c",
+   "a": "Gorilla",
+   "b": "Tundi",
+   "ga": 2,
+   "gb": 9,
+   "date": "2026-05-13",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 2"
+  },
+  {
+   "id": "liq-35b751d46dfe81bb",
+   "a": "Stokes",
+   "b": "Danipitbull",
+   "ga": 7,
+   "gb": 9,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-088aebf8062148d9",
+   "a": "Tom",
+   "b": "BorasLegend",
+   "ga": 5,
+   "gb": 2,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-e720aa11200a96e5",
+   "a": "Stingray",
+   "b": "RSDGAWD",
+   "ga": 5,
+   "gb": 3,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-3bafbc799962aee1",
+   "a": "EmreYilmaz",
+   "b": "Tundi",
+   "ga": 8,
+   "gb": 7,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-ec9a1a65b81a2809",
+   "a": "Gorilla",
+   "b": "Yannic0109",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-419f74aa07461bb0",
+   "a": "1mpactZ",
+   "b": "xavik_05",
+   "ga": 8,
+   "gb": 12,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-7ec5d7606d3ec9a4",
+   "a": "Jonny",
+   "b": "Obrun2002",
+   "ga": 6,
+   "gb": 2,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-a353b947f30dd983",
+   "a": "Ilian",
+   "b": "Magicien",
+   "ga": 9,
+   "gb": 4,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-ed6f2546082a4c5a",
+   "a": "Danipitbull",
+   "b": "Tom",
+   "ga": 7,
+   "gb": 4,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-8e3ccf8e8261b9b9",
+   "a": "Stingray",
+   "b": "EmreYilmaz",
+   "ga": 3,
+   "gb": 4,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-b46ec043e8bb62f4",
+   "a": "Gorilla",
+   "b": "xavik_05",
+   "ga": 5,
+   "gb": 4,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-4e8161a41f50665b",
+   "a": "Jonny",
+   "b": "Ilian",
+   "ga": 5,
+   "gb": 1,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-f6ebd973face73f9",
+   "a": "Danipitbull",
+   "b": "EmreYilmaz",
+   "ga": 6,
+   "gb": 7,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-b57e08dcc50f1620",
+   "a": "Gorilla",
+   "b": "Jonny",
+   "ga": 3,
+   "gb": 4,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
+  },
+  {
+   "id": "liq-5fbbe652fa477f4a",
+   "a": "EmreYilmaz",
+   "b": "Jonny",
+   "ga": 10,
+   "gb": 7,
+   "date": "2026-05-20",
+   "note": "Liquipedia: Wicked Wednesday/2026/Week 3"
   }
  ]
 }
