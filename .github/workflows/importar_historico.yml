@@ -7,6 +7,10 @@ on:
         description: 'Cuantos torneos probar (vacio o 0 = todos, ~1h)'
         required: false
         default: '15'
+      debug_pagina:
+        description: 'Nombre exacto de un torneo para inspeccionar (deja vacio para importar normal)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -31,14 +35,16 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
         run: |
-          if [ -z "${{ github.event.inputs.limite }}" ] || [ "${{ github.event.inputs.limite }}" = "0" ]; then
+          if [ -n "${{ github.event.inputs.debug_pagina }}" ]; then
+            python scripts/importar_liquipedia.py --debug-pagina "${{ github.event.inputs.debug_pagina }}"
+          elif [ -z "${{ github.event.inputs.limite }}" ] || [ "${{ github.event.inputs.limite }}" = "0" ]; then
             python scripts/importar_liquipedia.py
           else
             python scripts/importar_liquipedia.py --limit ${{ github.event.inputs.limite }}
           fi
 
       - name: Guardar progreso y resultados
-          if: always()
+        if: always()
         run: |
           git config user.name  "importador"
           git config user.email "actions@github.com"
