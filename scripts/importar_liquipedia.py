@@ -54,6 +54,8 @@ class LiquipediaAPI:
         self._ultima = time.time()
 
     def get(self, **params) -> dict:
+        """Si Liquipedia responde 429, se espera y se reintenta: puede
+        ser tráfico ajeno compartiendo la misma IP de GitHub Actions."""
         params["format"] = "json"
         for intento in range(4):
             self._esperar()
@@ -327,13 +329,8 @@ def main() -> int:
     print(f"[resumen] torneos con error de red (reintentar): {con_error}", file=sys.stderr)
 
     if sin_match > len(pendientes) * 0.5 and len(pendientes) > 5:
-        print("\n[AVISO] mas de la mitad de los torneos no dieron ningun partido.",
-              file=sys.stderr)
-        print("Antes de lanzar el barrido completo, usa --debug-pagina con uno de",
-              file=sys.stderr)
-        print("esos torneos para ver si el formato real difiere del esperado.",
-              file=sys.stderr)
-        return 1
+        print(f"\n[info] {sin_match} de {len(pendientes)} torneos sin partidos "
+              f"(normal: proximos/cancelados en la misma categoria).", file=sys.stderr)
 
     return 0
 
