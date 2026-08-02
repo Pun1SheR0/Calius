@@ -1,0 +1,686 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcador · enfrentamientos EA FC</title>
+<meta name="theme-color" content="#131C22">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Marcador">
+<link rel="manifest" href='data:application/manifest+json,{"name":"Marcador","short_name":"Marcador","display":"standalone","background_color":"%23DFE2DE","theme_color":"%23131C22","start_url":"."}'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#DFE2DE; --card:#F5F6F3; --ink:#131C22; --muted:#5E6B70;
+  --rule:#C3C8C3; --rule-soft:#D8DCD8;
+  --win:#16624A; --loss:#A33528; --draw:#8A7A4E;
+  --focus:#B8860B;
+  --pad:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Inter",system-ui,sans-serif; font-size:15px; line-height:1.55;
+  padding:24px 16px 64px;
+}
+.wrap{max-width:860px;margin:0 auto}
+
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;margin:0;letter-spacing:-.02em}
+h1{font-size:26px}
+h2{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:"DM Mono",monospace;font-variant-numeric:tabular-nums}
+
+header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px;flex-wrap:wrap}
+header .meta{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+section{margin-bottom:34px}
+.sechead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sechead:after{content:"";flex:1;height:1px;background:var(--rule)}
+
+/* ---- controles ---- */
+label{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:5px}
+input,select,button,textarea{font-family:inherit;font-size:15px;color:var(--ink)}
+input,select{
+  width:100%;padding:9px 11px;background:var(--card);
+  border:1px solid var(--rule);border-radius:2px;
+}
+input:focus-visible,select:focus-visible,button:focus-visible{
+  outline:2px solid var(--focus);outline-offset:1px}
+.num{font-family:"DM Mono",monospace;text-align:center}
+
+button{
+  background:var(--ink);color:var(--card);border:0;border-radius:2px;
+  padding:10px 18px;cursor:pointer;font-weight:500;letter-spacing:.02em}
+button:hover{background:#2A3942}
+button.ghost{background:transparent;color:var(--muted);border:1px solid var(--rule);padding:6px 12px;font-size:13px}
+button.ghost:hover{background:var(--card);color:var(--ink)}
+
+/* ---- scoreboard ---- */
+.board{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--ink);padding:26px var(--pad)}
+.board .row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px}
+.board .name{font-family:"Bricolage Grotesque",sans-serif;font-size:21px;font-weight:600;line-height:1.2}
+.board .name.r{text-align:right}
+.board .score{font-family:"DM Mono",monospace;font-size:58px;font-weight:500;
+  letter-spacing:-.03em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.board .score .sep{color:var(--rule);padding:0 6px}
+.lead{color:var(--win)}
+.behind{color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:1px;background:var(--rule-soft);border:1px solid var(--rule-soft);margin-top:22px}
+.stat{background:var(--card);padding:11px 13px}
+.stat .k{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:"DM Mono",monospace;font-size:19px;margin-top:2px}
+
+/* secuencia de resultados */
+.seq{display:flex;gap:3px;margin-top:4px;flex-wrap:wrap}
+.seq i{width:17px;height:17px;display:grid;place-items:center;border-radius:2px;
+  font-style:normal;font-size:10px;font-weight:600;color:var(--card);font-family:"DM Mono",monospace}
+.seq i.w{background:var(--win)} .seq i.l{background:var(--loss)}
+.seqnote{font-size:11px;color:var(--muted);margin-top:6px}
+
+/* ---- tablas ---- */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;padding:0 8px 7px;border-bottom:1px solid var(--rule)}
+th.r,td.r{text-align:right}
+td{padding:8px;border-bottom:1px solid var(--rule-soft)}
+tr:hover td{background:var(--card)}
+td.mono{font-variant-numeric:tabular-nums}
+
+/* líneas de goles */
+.lam{display:flex;gap:20px;flex-wrap:wrap;background:var(--card);border:1px solid var(--rule);
+  border-top:3px solid var(--ink);padding:14px var(--pad);margin-bottom:2px}
+.lam div{min-width:96px}
+.lam .k{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lam .v{font-family:"DM Mono",monospace;font-size:19px}
+table.lines{background:var(--card);border:1px solid var(--rule);border-top:0}
+table.lines td,table.lines th{padding:7px 9px}
+table.lines th.grp{border-bottom:0;padding-bottom:2px;color:var(--ink);font-weight:600}
+table.lines input{width:66px;padding:4px 6px;text-align:center;
+  font-family:"DM Mono",monospace;font-size:13px}
+.fair{font-family:"DM Mono",monospace;font-weight:500}
+.edge{font-family:"DM Mono",monospace;font-size:13px}
+.edge.pos{color:var(--win);font-weight:500} .edge.neg{color:var(--muted)}
+.split{border-left:1px solid var(--rule)}
+textarea{width:100%;padding:11px;background:var(--card);border:1px solid var(--rule);
+  border-radius:2px;font-family:"DM Mono",monospace;font-size:13px;line-height:1.7;resize:vertical}
+textarea:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.bad td{color:var(--loss)}
+summary.advanced{cursor:pointer;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);padding:6px 0;list-style:none}
+summary.advanced::-webkit-details-marker{display:none}
+summary.advanced:before{content:"+ ";font-family:"DM Mono",monospace}
+details[open] summary.advanced:before{content:"– "}
+summary.advanced:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* Plegables de primer nivel: más visibles que el de carga masiva, porque
+   ahora son la navegación principal, no una opción secundaria escondida. */
+summary.toggle{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  background:var(--card);border:1px solid var(--rule);padding:13px var(--pad);
+  border-radius:2px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px}
+summary.toggle::-webkit-details-marker{display:none}
+summary.toggle:before{content:"+";font-family:"DM Mono",monospace;font-weight:400;
+  color:var(--muted);font-size:17px;width:14px}
+details[open]>summary.toggle:before{content:"–"}
+summary.toggle:hover{background:#EAEBE6}
+summary.toggle:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+details[open]>summary.toggle{border-bottom:0;border-radius:2px 2px 0 0}
+details[open]>summary.toggle+*{border:1px solid var(--rule);border-top:0;
+  padding:16px var(--pad);background:var(--card)}
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:1fr 62px 62px 1fr}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:1fr 1fr auto}
+@media(max-width:620px){.g4{grid-template-columns:1fr 1fr}.g2,.g3{grid-template-columns:1fr}
+  .board .score{font-size:42px}.board .name{font-size:17px}}
+
+.empty{background:var(--card);border:1px dashed var(--rule);padding:26px var(--pad);color:var(--muted)}
+.empty strong{display:block;color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;
+  font-size:17px;font-weight:600;margin-bottom:4px}
+
+.flag{background:#F7EFD9;border-left:3px solid var(--focus);padding:10px 13px;
+  font-size:13px;margin-top:12px}
+.flag b{font-weight:600}
+.flag button{margin-left:8px}
+
+.toast{position:relative;background:var(--ink);color:var(--card);padding:9px 13px;
+  font-size:13px;margin-top:12px;border-radius:2px}
+.hidden{display:none}
+.foot{display:flex;gap:10px;justify-content:space-between;align-items:center;
+  border-top:1px solid var(--rule);padding-top:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+@media(prefers-reduced-motion:no-preference){
+  .board,.toast{animation:in .18s ease-out}
+  @keyframes in{from{opacity:0;transform:translateY(3px)}}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Marcador</h1>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span class="meta" id="counter">cargando…</span>
+    <button id="update">Actualizar resultados</button>
+  </div>
+</header>
+<p id="updateMsg" class="meta" style="margin:-16px 0 22px;min-height:16px"></p>
+<div id="toast" class="toast hidden"></div>
+
+<section>
+  <div class="sechead"><h2>Enfrentamiento</h2></div>
+  <div class="grid g3" style="margin-bottom:16px">
+    <div><label for="selA">Jugador</label><select id="selA"></select></div>
+    <div><label for="selB">Rival</label><select id="selB"></select></div>
+    <div style="display:flex;align-items:flex-end"><button class="ghost" id="swap">Invertir</button></div>
+  </div>
+  <div id="board"></div>
+</section>
+
+<section>
+  <details id="linesBox">
+  <summary class="toggle">Líneas de goles y under/over</summary>
+  <div id="lines"></div>
+  </details>
+</section>
+
+
+
+<section>
+  <details id="histBox">
+  <summary class="toggle">Ver historial completo de partidos</summary>
+  <div id="history"></div>
+  </details>
+</section>
+
+<section>
+  <details id="playersBox">
+  <summary class="toggle">Ver todos los jugadores y su récord</summary>
+  <div id="players"></div>
+  </details>
+</section>
+
+<div class="foot">
+  <span id="status">Datos actualizados automáticamente desde EGamersWorld.</span>
+</div>
+</div>
+
+<script>
+const KEY = 'marcador:v1';
+let db = { players: [], matches: [] };
+let mem = false;
+
+/* ---------- persistencia ---------- */
+/* Tres niveles: window.storage (dentro de Claude), localStorage (archivo
+   abierto en tu navegador) y memoria (último recurso, avisa al usuario). */
+let backend = 'none';
+
+async function load(){
+  try{
+    if(window.storage){
+      const r = await window.storage.get(KEY);
+      backend = 'cloud';
+      if(r && r.value) db = JSON.parse(r.value);
+      return;
+    }
+  }catch(e){
+    if(window.storage){ backend = 'cloud'; return; }   // clave aún no creada
+  }
+  try{
+    const raw = localStorage.getItem(KEY);
+    localStorage.setItem(KEY + ':probe', '1');
+    localStorage.removeItem(KEY + ':probe');
+    backend = 'local';
+    if(raw) db = JSON.parse(raw);
+  }catch(e){
+    backend = 'memory';
+  }
+  showBackend();
+}
+/* Pide al navegador que no desaloje estos datos si va justo de espacio. */
+async function requestPersist(){
+  try{
+    if(navigator.storage && navigator.storage.persist){
+      if(!(await navigator.storage.persisted())) await navigator.storage.persist();
+    }
+  }catch(e){}
+}
+
+function showBackend(){
+  const el = document.getElementById('status');
+  if(backend === 'memory') el.textContent =
+    'Sin almacenamiento: los datos se pierden al cerrar. Exporta una copia.';
+  else if(backend === 'local') el.textContent =
+    'Guardado en este navegador. Exporta una copia de vez en cuando.';
+}
+async function save(){
+  try{
+    if(backend === 'cloud'){ await window.storage.set(KEY, JSON.stringify(db)); return; }
+    if(backend === 'local'){ localStorage.setItem(KEY, JSON.stringify(db)); return; }
+  }catch(e){ toast('No se pudo guardar. Exporta una copia antes de cerrar.'); }
+}
+
+/* ---------- actualización en vivo ---------- */
+/* Una página web no puede leer otra web directamente: el navegador lo bloquea
+   (CORS). Se pasa por un intermediario público. Se prueban varios por si uno
+   está caído. Si todos fallan, la app sigue funcionando con lo que ya tiene. */
+const ORIGEN = 'https://egamersworld.com/fifa/matches/history';
+const PUENTES = [
+  u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+  u => 'https://r.jina.ai/' + u,
+  u => 'https://corsproxy.io/?' + encodeURIComponent(u),
+];
+
+const RE_LINK = /\/fifa\/match\/[A-Za-z0-9_-]+\/([a-z0-9][a-z0-9-]*?)-vs-([a-z0-9][a-z0-9-]*?)-([A-Za-z0-9_-]{7,})/g;
+const RE_GOLES = /Bo\d\s*(?:<[^>]*>\s*)*(\d{1,2})\s*(?:<[^>]*>\s*)*:\s*(?:<[^>]*>\s*)*(\d{1,2})/g;
+const RE_FECHA = /(\d{2})\.(\d{2})\.(\d{2})/g;
+
+const bonito = slug => slug.split('-').filter(Boolean)
+  .map(p => p[0].toUpperCase() + p.slice(1)).join(' ');
+
+function extraer(texto){
+  const filas = [];
+  RE_LINK.lastIndex = 0;
+  let m;
+  while((m = RE_LINK.exec(texto)) !== null){
+    const [, aSlug, bSlug, id] = m;
+    const ventana = texto.slice(Math.max(0, m.index - 4000), m.index);
+
+    const goles = [...ventana.matchAll(RE_GOLES)];
+    if(!goles.length) continue;
+    const g = goles[goles.length - 1];
+    const ga = +g[1], gb = +g[2];
+    if(ga === gb) continue;
+
+    const fechas = [...ventana.matchAll(RE_FECHA)];
+    let date = '';
+    if(fechas.length){ const f = fechas[fechas.length - 1]; date = `20${f[3]}-${f[2]}-${f[1]}`; }
+
+    filas.push({ id, a: bonito(aSlug), b: bonito(bSlug), ga, gb, date });
+  }
+  return filas;
+}
+
+async function actualizar(){
+  const btn = document.getElementById('update');
+  const est = document.getElementById('updateMsg');
+  btn.disabled = true;
+  est.textContent = 'Buscando resultados nuevos…';
+
+  let texto = null;
+  for(const puente of PUENTES){
+    try{
+      const r = await fetch(puente(ORIGEN), {cache:'no-store'});
+      if(!r.ok) continue;
+      const t = await r.text();
+      if(t && t.length > 2000){ texto = t; break; }
+    }catch(e){ /* siguiente puente */ }
+  }
+
+  btn.disabled = false;
+  if(!texto){
+    est.textContent = 'No se ha podido conectar. Prueba de nuevo más tarde.';
+    return;
+  }
+
+  const filas = extraer(texto);
+  if(!filas.length){
+    est.textContent = 'Conectado, pero no se han reconocido resultados. '
+      + 'La web de origen ha cambiado y hay que ajustar la app.';
+    return;
+  }
+
+  db.feedIds = db.feedIds || [];
+  const conocidos = new Set(db.feedIds);
+  let nuevos = 0;
+  for(const f of filas){
+    if(conocidos.has(f.id)) continue;
+    const a = ensurePlayer(f.a), b = ensurePlayer(f.b);
+    db.matches.push({ id:'f'+f.id, a:a.id, b:b.id, ga:f.ga, gb:f.gb,
+                      date:f.date, note:'EGW' });
+    db.feedIds.push(f.id); conocidos.add(f.id);
+    nuevos++;
+  }
+  db.lastUpdate = new Date().toISOString();
+  await save();
+  renderAll();
+  est.textContent = nuevos
+    ? `${nuevos} partidos nuevos añadidos.`
+    : `Ya estaba todo al día (${filas.length} partidos revisados).`;
+}
+
+/* ---------- sincronización automática ---------- */
+/* La app busca un data.json junto a ella al arrancar y añade lo que no tenga.
+   Así el usuario final no importa nada: abre y los partidos ya están.
+   Si el archivo no existe (o se abre en local), no pasa nada. */
+const FEED = 'data.json';
+
+async function syncFeed(){
+  let feed;
+  try{
+    const r = await fetch(FEED + '?t=' + Date.now(), {cache:'no-store'});
+    if(!r.ok) return 0;
+    feed = await r.json();
+  }catch(e){ return 0; }
+  if(!feed || !Array.isArray(feed.matches)) return 0;
+
+  db.feedIds = db.feedIds || [];
+  const known = new Set(db.feedIds);
+  let nuevos = 0;
+  for(const m of feed.matches){
+    if(!m.id || known.has(m.id)) continue;
+    if(!m.a || !m.b || m.ga === m.gb) continue;
+    const a = ensurePlayer(String(m.a)), b = ensurePlayer(String(m.b));
+    db.matches.push({ id:'f'+m.id, a:a.id, b:b.id,
+      ga:+m.ga, gb:+m.gb, date:m.date||'', note:m.note||'' });
+    db.feedIds.push(m.id); known.add(m.id);
+    nuevos++;
+  }
+  if(nuevos){ await save(); }
+  return nuevos;
+}
+
+/* ---------- nombres ---------- */
+const norm = s => s.normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+  .toLowerCase().replace(/[^a-z0-9]/g,'');
+
+function findPlayer(name){
+  const n = norm(name);
+  return db.players.find(p => norm(p.name) === n) || null;
+}
+function ensurePlayer(name){
+  const found = findPlayer(name);
+  if(found) return found;
+  const p = { id:'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),
+              name:name.trim() };
+  db.players.push(p);
+  return p;
+}
+
+/* ---------- consultas ---------- */
+const pName = id => (db.players.find(p=>p.id===id)||{name:'—'}).name;
+
+function between(aId,bId){
+  return db.matches
+    .filter(m => (m.a===aId&&m.b===bId)||(m.a===bId&&m.b===aId))
+    .sort((x,y)=> (x.date||'').localeCompare(y.date||''));
+}
+function overall(id){
+  let w=0,l=0,gf=0,ga=0;
+  for(const m of db.matches){
+    if(m.a!==id && m.b!==id) continue;
+    const mine = m.a===id ? m.ga : m.gb, his = m.a===id ? m.gb : m.ga;
+    gf+=mine; ga+=his; mine>his ? w++ : l++;
+  }
+  return {w,l,gf,ga,n:w+l};
+}
+
+/* ---------- render ---------- */
+function esc(s){ return String(s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c])); }
+
+function renderBoard(){
+  const el = document.getElementById('board');
+  const a = document.getElementById('selA').value, b = document.getElementById('selB').value;
+  if(!a || !b || a===b){
+    el.innerHTML = `<div class="empty"><strong>Elige dos jugadores</strong>
+      Aquí verás el marcador entre ellos y todos sus partidos.</div>`;
+    return;
+  }
+  const ms = between(a,b);
+  if(!ms.length){
+    el.innerHTML = `<div class="empty"><strong>Nunca se han enfrentado</strong>
+      No hay ningún partido registrado entre ${esc(pName(a))} y ${esc(pName(b))}.</div>`;
+    return;
+  }
+  let wa=0,wb=0,gfa=0,gfb=0; const seq=[];
+  for(const m of ms){
+    const ga = m.a===a ? m.ga : m.gb, gb = m.a===a ? m.gb : m.ga;
+    gfa+=ga; gfb+=gb;
+    if(ga>gb){ wa++; seq.push('w'); } else { wb++; seq.push('l'); }
+  }
+  const pct = wa/ms.length;
+  const last5 = seq.slice(-5);
+  let run=0; const lastRes = seq[seq.length-1];
+  for(let i=seq.length-1;i>=0 && seq[i]===lastRes;i--) run++;
+
+  el.innerHTML = `
+  <div class="board">
+    <div class="row">
+      <div class="name ${wa>wb?'lead':'behind'}">${esc(pName(a))}</div>
+      <div class="score"><span class="${wa>wb?'lead':''}">${wa}</span><span class="sep">–</span><span class="${wb>wa?'lead':''}">${wb}</span></div>
+      <div class="name r ${wb>wa?'lead':'behind'}">${esc(pName(b))}</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="k">Partidos</div><div class="v">${ms.length}</div></div>
+      <div class="stat"><div class="k">Victorias ${esc(pName(a))}</div><div class="v">${(pct*100).toFixed(0)}%</div></div>
+      <div class="stat"><div class="k">Goles</div><div class="v">${gfa}–${gfb}</div></div>
+      <div class="stat"><div class="k">Media total</div><div class="v">${((gfa+gfb)/ms.length).toFixed(2)}</div></div>
+      <div class="stat"><div class="k">Racha actual</div><div class="v">${lastRes==='w'?pName(a):pName(b)} ×${run}</div></div>
+      <div class="stat"><div class="k">Últimos 5</div>
+        <div class="seq">${last5.map(s=>`<i class="${s}">${s==='w'?'V':'D'}</i>`).join('')}</div>
+        <div class="seqnote">desde ${esc(pName(a))}</div></div>
+    </div>
+    ${ms.length<5 ? `<div class="flag">Solo ${ms.length} ${ms.length===1?'partido':'partidos'} entre ellos.
+      Ese ${(pct*100).toFixed(0)}% no distingue a un jugador mejor de una racha de suerte.</div>` : ''}
+  </div>`;
+}
+
+/* ---------- distribución de goles ---------- */
+const LG_C=[0.99999999999980993,676.5203681218851,-1259.1392167224028,
+  771.32342877765313,-176.61502916214059,12.507343278686905,
+  -0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+function lgamma(z){
+  if(z<0.5) return Math.log(Math.PI/Math.sin(Math.PI*z))-lgamma(1-z);
+  z-=1; let x=LG_C[0];
+  for(let i=1;i<9;i++) x+=LG_C[i]/(z+i);
+  const t=z+7.5;
+  return 0.5*Math.log(2*Math.PI)+(z+0.5)*Math.log(t)-t+Math.log(x);
+}
+const poisPmf=(k,l)=> l<=0 ? (k===0?1:0) : Math.exp(-l+k*Math.log(l)-lgamma(k+1));
+function nbPmf(k,mu,varr){
+  const r=mu*mu/(varr-mu), p=r/(r+mu);
+  return Math.exp(lgamma(k+r)-lgamma(r)-lgamma(k+1)+r*Math.log(p)+k*Math.log(1-p));
+}
+
+/** Ritmo goleador de un jugador sobre TODOS sus partidos. */
+function rates(id){
+  let gf=0,ga=0,n=0;
+  for(const m of db.matches){
+    if(m.a===id){ gf+=m.ga; ga+=m.gb; n++; }
+    else if(m.b===id){ gf+=m.gb; ga+=m.ga; n++; }
+  }
+  return {n, gf: n?gf/n:null, ga: n?ga/n:null};
+}
+function globalAvg(){
+  if(!db.matches.length) return 2.0;
+  const total=db.matches.reduce((s,m)=>s+m.ga+m.gb,0);
+  return total/(2*db.matches.length);   // goles por equipo y partido
+}
+
+/**
+ * Total esperado del enfrentamiento.
+ *  - modelo: ataque de uno × defensa del otro, escalado a la media global
+ *  - directo: media de los cara a cara
+ *  - mezcla: peso n/(n+K) al directo. Con K=5, hacen falta 5 precedentes
+ *    para que el historial directo pese tanto como el modelo.
+ */
+const SHRINK_K = 5;
+function goalModel(aId,bId){
+  const avg=globalAvg(), ra=rates(aId), rb=rates(bId);
+  const atkA = ra.gf!=null && avg ? ra.gf/avg : 1, defA = ra.ga!=null && avg ? ra.ga/avg : 1;
+  const atkB = rb.gf!=null && avg ? rb.gf/avg : 1, defB = rb.ga!=null && avg ? rb.ga/avg : 1;
+  const lamModel = atkA*defB*avg + atkB*defA*avg;
+
+  const ms=between(aId,bId);
+  const totals=ms.map(m=>m.ga+m.gb);
+  const n=totals.length;
+  const lamH2H = n ? totals.reduce((s,t)=>s+t,0)/n : null;
+  const w = n/(n+SHRINK_K);
+  const mu = n ? w*lamH2H + (1-w)*lamModel : lamModel;
+
+  // Dispersión medida sobre todos los partidos de la base
+  const allTot=db.matches.map(m=>m.ga+m.gb);
+  let varr=mu, over=false;
+  if(allTot.length>4){
+    const m0=allTot.reduce((s,t)=>s+t,0)/allTot.length;
+    const v0=allTot.reduce((s,t)=>s+(t-m0)**2,0)/(allTot.length-1);
+    if(v0>m0*1.05){ varr = mu*(v0/m0); over=true; }
+  }
+  const pmf = k => over ? nbPmf(k,mu,varr) : poisPmf(k,mu);
+  return {mu, lamModel, lamH2H, n, w, over, pmf,
+          h2hMin: n?Math.min(...totals):null, h2hMax: n?Math.max(...totals):null};
+}
+
+const houseOdds = {};   // se conserva entre repintados
+
+function renderLines(){
+  const el=document.getElementById('lines');
+  const a=document.getElementById('selA').value, b=document.getElementById('selB').value;
+  if(!a||!b||a===b){
+    el.innerHTML=`<div class="empty"><strong>Elige dos jugadores</strong>
+      Aquí verás el total de goles esperado y la cuota justa de cada línea.</div>`;
+    return;
+  }
+  if(db.matches.length<6){
+    el.innerHTML=`<div class="empty"><strong>Faltan datos</strong>
+      Con ${db.matches.length} partidos en total no hay base para estimar goles.
+      Anota unos cuantos más.</div>`;
+    return;
+  }
+  const g=goalModel(a,b);
+
+  // Acumulada hasta 25 goles, suficiente para agotar la masa
+  const P=[]; for(let k=0;k<=25;k++) P.push(g.pmf(k));
+  const sum=P.reduce((s,p)=>s+p,0);
+  const cum=[]; let c=0;
+  for(const p of P){ c+=p/sum; cum.push(c); }
+
+  const centre=Math.round(g.mu);
+  const linesArr=[];
+  for(let i=-2;i<=2;i++){ const L=centre+i-0.5; if(L>0.9) linesArr.push(L); }
+
+  const side=(label,p,key)=>{
+    const h=houseOdds[key]||'', o=parseFloat(h);
+    const e=(o&&o>1)?(p*o-1):null;
+    const cell = e===null ? '<span class="edge neg">—</span>'
+      : `<span class="edge ${e>=0.02?'pos':'neg'}">${e>=0?'+':''}${(e*100).toFixed(1)}%</span>`;
+    return `<div class="side">
+      <div class="k">${label}</div>
+      <div class="pv">${(p*100).toFixed(1)}%<small>justa ${p>0.001?(1/p).toFixed(2):'—'}</small></div>
+      <div class="cmp"><input data-k="${key}" value="${h}" placeholder="casa"
+        inputmode="decimal" aria-label="Cuota de la casa para ${label}">${cell}</div>
+    </div>`;
+  };
+  const rows=linesArr.map(L=>{
+    const under=cum[Math.floor(L)], over=1-under, key=L.toFixed(1);
+    return `<div class="lcard"><div class="ln">${key}</div>
+      ${side('Menos de '+key, under, key+'U')}
+      ${side('Más de '+key,  over,  key+'O')}</div>`;
+  }).join('');
+
+  el.innerHTML=`
+  <div class="lam">
+    <div><div class="k">Total esperado</div><div class="v">${g.mu.toFixed(2)}</div></div>
+    <div><div class="k">Cara a cara (${g.n})</div><div class="v">${g.lamH2H!=null?g.lamH2H.toFixed(2):'—'}</div></div>
+    <div><div class="k">Modelo</div><div class="v">${g.lamModel.toFixed(2)}</div></div>
+    <div><div class="k">Peso del directo</div><div class="v">${(g.w*100).toFixed(0)}%</div></div>
+    <div><div class="k">Rango visto</div><div class="v">${g.n?g.h2hMin+'–'+g.h2hMax:'—'}</div></div>
+  </div>
+  <div class="lhead"><div>Línea</div><div>Menos de</div><div>Más de</div></div>
+  ${rows}
+  <div class="flag">
+    ${g.over?'Distribución binomial negativa, ajustada a la dispersión real de tus datos.'
+            :'Distribución de Poisson: aún no hay dispersión suficiente para ajustarla.'}
+    ${g.n<5?` El historial directo (${g.n}) pesa solo un ${(g.w*100).toFixed(0)}%: la estimación viene sobre todo del ritmo goleador de cada uno.`:''}
+    La cuota justa no lleva margen — cualquier casa ofrecerá menos. Solo hay valor si te dan
+    <b>más</b> que ese número.
+  </div>`;
+
+  el.querySelectorAll('input[data-k]').forEach(inp=>{
+    inp.oninput=()=>{ houseOdds[inp.dataset.k]=inp.value; };
+    inp.onchange=()=>{ houseOdds[inp.dataset.k]=inp.value; renderLines(); };
+  });
+}
+
+function renderHistory(){
+  const el = document.getElementById('history');
+  const a = document.getElementById('selA').value, b = document.getElementById('selB').value;
+  const pair = a && b && a!==b;
+  const ms = (pair ? between(a,b) : [...db.matches].sort((x,y)=>(y.date||'').localeCompare(x.date||''))).slice();
+  if(pair) ms.reverse();
+  if(!ms.length){ el.innerHTML = `<div class="empty"><strong>Sin partidos</strong>Anota el primero arriba.</div>`; return; }
+  el.innerHTML = `<table><thead><tr>
+      <th>Fecha</th><th>Jugador</th><th class="r">Res.</th><th>Rival</th><th>Torneo</th><th></th>
+    </tr></thead><tbody>${ms.slice(0,40).map(m=>`
+      <tr><td class="mono" style="color:var(--muted)">${m.date||'—'}</td>
+        <td>${esc(pName(m.a))}</td>
+        <td class="r mono"><b>${m.ga}–${m.gb}</b></td>
+        <td>${esc(pName(m.b))}</td>
+        <td style="color:var(--muted)">${esc(m.note||'')}</td>
+        <td class="r"><button class="ghost" data-del="${m.id}">Borrar</button></td></tr>`).join('')}
+    </tbody></table>
+    ${ms.length>40?`<p style="font-size:12px;color:var(--muted)">Mostrando 40 de ${ms.length}.</p>`:''}`;
+  el.querySelectorAll('[data-del]').forEach(btn => btn.onclick = async () => {
+    db.matches = db.matches.filter(m=>m.id!==btn.dataset.del);
+    await save(); renderAll();
+  });
+}
+
+function renderPlayers(){
+  const el = document.getElementById('players');
+  if(!db.players.length){ el.innerHTML = `<div class="empty"><strong>Aún no hay jugadores</strong>
+    Se dan de alta solos al anotar el primer resultado.</div>`; return; }
+  const rows = db.players.map(p=>({p,s:overall(p.id)}))
+    .sort((x,y)=> (y.s.n?y.s.w/y.s.n:0)-(x.s.n?x.s.w/x.s.n:0) || y.s.n-x.s.n);
+  el.innerHTML = `<table><thead><tr><th>Jugador</th><th class="r">PJ</th><th class="r">V</th>
+    <th class="r">D</th><th class="r">%V</th><th class="r">Goles</th></tr></thead><tbody>
+    ${rows.map(({p,s})=>`<tr><td>${esc(p.name)}</td><td class="r mono">${s.n}</td>
+      <td class="r mono">${s.w}</td><td class="r mono">${s.l}</td>
+      <td class="r mono">${s.n?(100*s.w/s.n).toFixed(0)+'%':'—'}</td>
+      <td class="r mono" style="color:var(--muted)">${s.gf}–${s.ga}</td></tr>`).join('')}
+    </tbody></table>`;
+}
+
+function renderSelectors(){
+  const sorted = [...db.players].sort((a,b)=>a.name.localeCompare(b.name));
+  for(const id of ['selA','selB']){
+    const sel = document.getElementById(id), keep = sel.value;
+    sel.innerHTML = `<option value="">—</option>` +
+      sorted.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');
+    if(sorted.some(p=>p.id===keep)) sel.value = keep;
+  }
+  document.getElementById('counter').textContent =
+    `${db.players.length} jugadores · ${db.matches.length} partidos`;
+}
+
+function renderAll(){ renderSelectors(); renderBoard(); renderLines();
+  renderHistory(); renderPlayers(); backupNotice(); }
+
+/* ---------- acciones ---------- */
+let toastTimer;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.remove('hidden');
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>t.classList.add('hidden'), 3200);
+}
+
+document.getElementById('update').onclick = actualizar;
+
+document.getElementById('swap').onclick = () => {
+  const A = document.getElementById('selA'), B = document.getElementById('selB');
+  [A.value, B.value] = [B.value, A.value];
+  renderBoard(); renderLines(); renderHistory();
+};
+document.getElementById('selA').onchange = () => { renderBoard(); renderLines(); renderHistory(); };
+document.getElementById('selB').onchange = () => { renderBoard(); renderLines(); renderHistory(); };
+
+load().then(async () => {
+  renderAll(); requestPersist();
+  const n = await syncFeed();
+  if(n){ renderAll(); toast(`${n} partidos nuevos.`); }
+});
+</script>
